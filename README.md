@@ -2,7 +2,9 @@
 
 Group Members:
 Garrett Addington
+
 Colleen Vanderbilt
+
 Charles Goff
 
 Project Purpose:
