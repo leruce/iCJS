@@ -286,7 +286,7 @@ public:
     return (x | x >> 32) + 1;
   }
 int arraySize(int expected, float f) {
-  long s = 
+  //long s =
   if (s > 1 << 30) {
     //error
   }
