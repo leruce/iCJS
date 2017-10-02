@@ -4,11 +4,14 @@
 
 using namespace std;
 
-static int FREE_KEY = 0;
-static int NO_VALUE = 0;
+
 
 class IntMap {
 private:
+
+    static int FREE_KEY = 0;
+    static int NO_VALUE = 0;
+
 
     typedef vector<int> intVector;
 
@@ -18,7 +21,9 @@ private:
 
     bool m_hasFreeKey;
 
+
     float m_fillFactor;
+
 
     int m_threshold;
 
@@ -102,8 +107,10 @@ public:
         return NO_VALUE != put(key, 666);
     }
 
-//    bool delete(int key) {
+
+
     bool toDelete(int key) {
+
         return NO_VALUE != remove(key);
     }
 
@@ -112,20 +119,21 @@ public:
     }
 
     static void intersect0(IntMap &m, vector<IntMap> &maps, vector<IntMap> &vmaps, IntStack &r) {
+
         intVector data = m.m_data;
         for (int k = 0; k < data.size(); k += 2) {
             bool found = true;
 //            int key - data[k];
             int key = data[k];
+
             if (FREE_KEY == key) {
                 continue;
             }
             for (int i = 1; i < maps.size(); i++) {
                 IntMap map = maps[i];
                 int value = map.get(key);
-
-//                if (NO_VALUE == val) {
                 if (NO_VALUE == value) {
+
                     IntMap vmap = vmaps[i];
                     int vval = vmaps.get(key);
                     if (NO_VALUE == vval) {
