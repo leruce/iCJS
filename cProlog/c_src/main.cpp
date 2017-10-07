@@ -4,6 +4,8 @@
 
 using namespace std;
 
+
+
 int main() {
     IntStack *m = new IntStack();
     IntStack *n = new IntStack(16);
