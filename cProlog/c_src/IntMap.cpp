@@ -4,15 +4,11 @@
 
 using namespace std;
 
-
+static int FREE_KEY = 0;
+static int NO_VALUE = 0;
 
 class IntMap {
 private:
-
-    static int FREE_KEY = 0;
-    static int NO_VALUE = 0;
-
-
     typedef vector<int> intVector;
 
     intVector m_data;
