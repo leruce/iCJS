@@ -36,7 +36,7 @@ bool IntStack::isEmpty() {
   return top < 0;
 }
 
-void IntStack::push() {
+void IntStack::push(int i) {
   if (++top >= stack.size()) {
       expand();
   }

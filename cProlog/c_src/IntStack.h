@@ -29,7 +29,7 @@ public:
 
 
 private:
-  vector<int> stack;
+  std::vector<int> stack;
   int top;
 };
 
