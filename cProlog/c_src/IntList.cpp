@@ -78,7 +78,7 @@ IntList::IntList(int X, IntList &Xs)
 
 /*
  ===================================================================
- Function: gethead
+ Function: getHead
  Parameters: IntList
  Return: int
  Description: returns value of head of an IntList
@@ -231,7 +231,7 @@ IntStack * IntList::toInts(IntList Xs)
     IntStack is;
     while(!isEmpty(Xs))
     {
-//        is.push(Xs.head);
+        is.push(Xs.head);
         xsPtr = tailPtr;
         tailPtr = Xs.tail;
 
