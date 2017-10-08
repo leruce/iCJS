@@ -8,6 +8,8 @@ set(SOURCE_FILES
     c_src/IntList.h
     c_src/IntStack.h
     c_src/IntStack_1.cpp
+    c_src/IntMap1.cpp
+    c_src/IntMap.h
     c_src/main.cpp)
 
 add_executable(cProlog ${SOURCE_FILES})
