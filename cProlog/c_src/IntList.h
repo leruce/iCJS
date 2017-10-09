@@ -7,6 +7,7 @@
 
 #include "IntStack.h"
 #include <string>
+#include <vector>
 /*
  ===========================================================================
  Name : IntList.h
@@ -43,8 +44,8 @@ public:
 
 //  Constructors
     // see private functions
-    IntList();
-
+//    IntList();
+    IntList(int head);
 
 
 //  Destructors
@@ -72,17 +73,19 @@ public:
 
 
     // add new head to a list
-    IntList * cons(int X, IntList Xs);
+    IntList * cons(int X, IntList *Xs);
 
-    // append int array xs to IntList Ys
-    IntList * app(int xs [], IntList Ys, int arraySize);
+    // append int vector xs to IntList Ys
+    IntList * app(std::vector <int> xs, IntList *Ys);
+
+
 
     // puts an IntList onto an IntStack
     // returns an IntStack object
-    IntStack * toInts(IntList Xs);
+    IntStack * toInts(IntList *Xs);
 
     // calc length of an IntList
-    int len(IntList Xs) const;
+    int len(IntList *Xs) const;
 
 
     // not sure what this does
@@ -95,9 +98,9 @@ private:
 
 
 //  private Constructors
-    IntList(int head);
+
 //    IntList(const int head);
-    IntList(int X, IntList &Xs);
+    IntList(int X, IntList *Xs);
 //    IntList(const int X, const IntList &Xs);
 
 };
