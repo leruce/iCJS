@@ -19,7 +19,7 @@
  Description : default constructor
  ===========================================================================
  */
-
+/*
 IntList::IntList()
 {
     head = -1;
@@ -27,7 +27,7 @@ IntList::IntList()
 
 
 }
-
+*/
 /*
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                    Private Constructors
@@ -61,11 +61,11 @@ IntList::IntList(int head)
  ===========================================================================
  */
 
-IntList::IntList(int X, IntList &Xs)
+IntList::IntList(int X, IntList *Xs)
 {
 
     head = X;
-    tail = &Xs;
+    tail = Xs;
 
 
 }
@@ -161,7 +161,7 @@ bool IntList::isEmpty(IntList Xs) const
 /*
  ===================================================================
  Function: isEmpty
- Parameters: IntList
+ Parameters: pointer to IntList
  Return: bool
  Description: Checks to see if the IntList is empty
  ===================================================================
@@ -172,22 +172,23 @@ bool IntList::isEmpty(IntList * Xs) const
     if(Xs->tail == NULL)
         return true;
     else
-        return true;
+        return false;
 }
 
 
 /*
  ===================================================================
  Function: cons
- Parameters: int value for head, IntList value for tail
- Return: IntList with new head added
+ Parameters: int value for head, pointer to an IntList
+ Return: pointer to IntList with new head added
  Description: Add int as new head to IntList
  ===================================================================
  */
 
-IntList * IntList::cons(int X, IntList Xs)
+IntList * IntList::cons(int X, IntList *Xs)
 {
-    return new IntList(X, Xs);
+    IntList *temp = new IntList(X, Xs);
+    return temp;
 
 }
 
@@ -196,47 +197,49 @@ IntList * IntList::cons(int X, IntList Xs)
 /*
  ===================================================================
  Function: app
- Parameters: array of integers, IntList
+ Parameters: vector of integers, pointer to an IntList
  Return: IntList
- Description: returns IntList with all ints in array added to end of IntList passed
- append starting with the last int in the array
+ Description: returns pointer to an IntList with all ints in vector added to head of IntList passed,
+ append starting with the last int in the array and moving up to first int in vector
  ===================================================================
  */
 
-IntList * IntList::app(int xs [], IntList Ys, int arraySize)
+IntList * IntList::app(std::vector <int> xs, IntList *Ys)
 {
-    IntList Zs = Ys;
-    IntListPtr ZsPtr = &Zs;
-    for (int index = arraySize -1; index >= 0; index--)
+    IntListPtr ZsPtr = Ys;
+    IntList *Zs = Ys;
+    for (int index = xs.size()-1; index >= 0; index--)
     {
         ZsPtr = cons(xs[index], Zs);
-
+        Zs = ZsPtr;
     }
 
-    return ZsPtr;
+    return Zs;
 }
+
 
 /*
  ===================================================================
  Function: toInts
  Parameters: IntList
  Return: IntStack
- Description: adds and IntList onto an IntStack
+ Description: adds an IntList onto an IntStack
  ===================================================================
  */
-IntStack * IntList::toInts(IntList Xs)
+IntStack * IntList::toInts(IntList *Xs)
 {
-    IntListPtr tailPtr = Xs.tail;
-    IntListPtr xsPtr = &Xs;
-    IntStack is;
-    while(!isEmpty(Xs))
-    {
-        is.push(Xs.head);
-        xsPtr = tailPtr;
-        tailPtr = Xs.tail;
+    IntStack *is = new IntStack();
+    bool empty = false;
+    IntListPtr copyPtr = Xs;
+    IntList *copy = Xs;
 
+    while (copyPtr != NULL)
+    {
+        is->push(Xs->head);
+        copyPtr = getTail(copy);
+        copy = copyPtr;
     }
-    return &is;
+    return is;
 }
 
 /*
@@ -247,21 +250,22 @@ IntStack * IntList::toInts(IntList Xs)
  Description: returns an int with the number of ints in the IntList
  ===================================================================
  */
-int IntList::len(IntList Xs) const
+int IntList::len(IntList *Xs) const
 {
     int size = 0;
-    IntListPtr tailPtr = Xs.tail;
-    IntList copy = Xs;
-    IntListPtr copyPtr = &Xs;
+    IntListPtr copyPtr = Xs;
+    IntList *copy = Xs;
 
     while (copyPtr != NULL)
     {
         size++;
 
-        copyPtr = tailPtr;
-        tailPtr = copy.tail;
+        copyPtr = getTail(copy);
+        copy = copyPtr;
 
     }
+
+
     return size;
 
 }
