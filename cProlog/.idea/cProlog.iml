@@ -7,8 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/c_src/IntList.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c_src/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c_src/IntMap1.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c_src/Spine.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c_src/IntStack_1.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c_src/Clause.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c_src/IntStack.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c_src/Clause.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c_src/Spine.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

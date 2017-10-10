@@ -10,6 +10,10 @@ set(SOURCE_FILES
     c_src/IntStack_1.cpp
     c_src/IntMap1.cpp
     c_src/IntMap.h
+    c_src/Clause.cpp
+    c_src/Clause.h
+    c_src/Spine.cpp
+    c_src/Spine.h
     c_src/main.cpp)
 
 add_executable(cProlog ${SOURCE_FILES})
