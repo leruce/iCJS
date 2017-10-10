@@ -20,7 +20,7 @@ Spine::Spine(vector<int> gs0, int base, IntList gs, int ttop, int k, vector<int>
 Spine::Spine(int hd, int ttop) {
     this->hd = hd;
     base = 0;
-    //Finish This Later. 
+    //Finish This Later.
     //gs = IntList->empty();
     this->ttop = ttop;
     k= -1;
