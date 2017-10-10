@@ -1,22 +1,25 @@
 #include <iostream>
 #include "IntList.h"
 #include "IntStack.h"
+#include "IntMap.h"
 
 using namespace std;
 
 
 
 int main() {
-    IntStack *m = new IntStack();
-    IntStack *n = new IntStack(16);
-    m->push(2);
-    m->push(4);
+    IntMap *m = new IntMap();
+    IntMap *n = new IntMap(16);
+    m->put(0,2);
+    m->put(1, 5);
 
-    n->push(7);
-    n->push(3);
 
-    cout << m->pop() << endl;
-    cout << n->pop() << endl;
+
+    //n->add(7);
+    //n->add(3);
+
+    cout << m->size() << endl;
+    cout << n->size() << endl;
 
     cout << "Hello This will be our First commit for our main function" << endl;
     cout << "Hello. Practicing doing my First branch and commit" << endl;

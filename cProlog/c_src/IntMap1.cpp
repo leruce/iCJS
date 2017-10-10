@@ -47,7 +47,7 @@ void IntMap::init() {
 }
 
 int IntMap::get(int key) {
-    int ptr = (phiMix(key) & m_mask) <<1;
+    int ptr = (phiMix(key) & m_mask) << 1;
 
     if (key == FREE_KEY) {
         return m_hasFreeKey ? m_freeValue : NO_VALUE;
