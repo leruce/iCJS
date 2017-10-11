@@ -34,11 +34,11 @@ int main() {
     bool isItEmpty = false;
 
 
-
-    IntList *list1 = new IntList(1);
-    IntList *list2 = new IntList(2);
-    IntList *list3 = new IntList(3);
-    IntList *list4 = new IntList(4);
+ /*
+  //  IntList *list1 = new IntList(1);
+  //  IntList *list2 = new IntList(2);
+  //  IntList *list3 = new IntList(3);
+  //  IntList *list4 = new IntList(4);
 
     isItEmpty = list1->isEmpty(*list1);
     cout << "list1 is it empty? " << isItEmpty << endl;
@@ -67,6 +67,9 @@ int main() {
     list1 = (var4, list2);
     IntStack *s = new IntStack();
     s = list1->toInts(list1);
+
+*/
+
 
 
 

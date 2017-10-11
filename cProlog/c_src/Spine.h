@@ -16,7 +16,7 @@ public:
     Spine(int hd, int ttop);
     int hd;
     int base;
-    IntList gs;
+    IntList *gs;
     int ttop;
     int k;
     vector<int> xs;
