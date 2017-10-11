@@ -45,7 +45,7 @@ public:
 //  Constructors
     // see private functions
 //    IntList();
-    IntList(int head);
+    //IntList(int head);
 
 
 //  Destructors
@@ -54,12 +54,12 @@ public:
 
 //  Accessors
     // get value of head
-    int getHead (IntList Xs) const;
-    int getHead (IntList *Xs) const;
+    static int getHead (IntList Xs);
+    static int getHead (IntList *Xs);
 
     // get tail
-    IntList* getTail (IntList Xs) const;
-    IntList* getTail (IntList *Xs) const;
+    static IntList* getTail (IntList Xs);
+    static IntList* getTail (IntList *Xs);
 
     // Mutators
 
@@ -68,24 +68,24 @@ public:
 //  Methods
 
     // is list empty
-    bool isEmpty(IntList Xs) const;
-    bool isEmpty(IntList * Xs) const;
+    static bool isEmpty(IntList Xs);
+    static bool isEmpty(IntList * Xs);
 
 
     // add new head to a list
-    IntList * cons(int X, IntList *Xs);
+    static IntList * cons(int X, IntList *Xs);
 
     // append int vector xs to IntList Ys
-    IntList * app(std::vector <int> xs, IntList *Ys);
+    static IntList * app(std::vector <int> xs, IntList *Ys);
 
 
 
     // puts an IntList onto an IntStack
     // returns an IntStack object
-    IntStack * toInts(IntList *Xs);
+    static IntStack * toInts(IntList *Xs);
 
     // calc length of an IntList
-    int len(IntList *Xs) const;
+    static int len(IntList *Xs);
 
 
     // not sure what this does
@@ -100,6 +100,7 @@ private:
 //  private Constructors
 
 //    IntList(const int head);
+    IntList(int head);
     IntList(int X, IntList *Xs);
 //    IntList(const int X, const IntList &Xs);
 

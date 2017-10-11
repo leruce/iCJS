@@ -11,6 +11,7 @@
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
 
+static IntList *empty = nullptr;
 /*
  ===========================================================================
  Function : IntList
@@ -42,6 +43,7 @@ IntList::IntList()
  Description : head value constructor
  ===========================================================================
  */
+
 
 IntList::IntList(int head)
 {
@@ -84,7 +86,7 @@ IntList::IntList(int X, IntList *Xs)
  Description: returns value of head of an IntList
  ===================================================================
  */
-int IntList::getHead(IntList Xs) const
+int IntList::getHead(IntList Xs)
 {
 
     return Xs.head;
@@ -100,7 +102,7 @@ Return: int
 Description: returns value of head of an IntList
 ===================================================================
 */
-int IntList::getHead(IntList *Xs) const
+int IntList::getHead(IntList *Xs)
 {
 
     return Xs->head;
@@ -116,7 +118,7 @@ int IntList::getHead(IntList *Xs) const
  Description: return pointer to value following head in the IntList
  ===================================================================
  */
-IntList * IntList::getTail(IntList Xs) const
+IntList * IntList::getTail(IntList Xs)
 {
     return Xs.tail;
 
@@ -130,7 +132,7 @@ IntList * IntList::getTail(IntList Xs) const
  Description: return pointer to value following head in the IntList
  ===================================================================
  */
-IntList * IntList::getTail(IntList *Xs) const
+IntList * IntList::getTail(IntList *Xs)
 {
     return Xs->tail;
 
@@ -149,7 +151,7 @@ IntList * IntList::getTail(IntList *Xs) const
  ===================================================================
  */
 
-bool IntList::isEmpty(IntList Xs) const
+bool IntList::isEmpty(IntList Xs)
 {
     if(Xs.tail == NULL)
         return true;
@@ -167,7 +169,7 @@ bool IntList::isEmpty(IntList Xs) const
  ===================================================================
  */
 
-bool IntList::isEmpty(IntList * Xs) const
+bool IntList::isEmpty(IntList * Xs)
 {
     if(Xs->tail == NULL)
         return true;
@@ -250,7 +252,7 @@ IntStack * IntList::toInts(IntList *Xs)
  Description: returns an int with the number of ints in the IntList
  ===================================================================
  */
-int IntList::len(IntList *Xs) const
+int IntList::len(IntList *Xs)
 {
     int size = 0;
     IntListPtr copyPtr = Xs;
