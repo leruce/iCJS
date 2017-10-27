@@ -48,7 +48,6 @@ void IntMap::init() {
 
 int IntMap::get(int key) {
     int ptr = (phiMix(key) & m_mask) << 1;
-
     if (key == FREE_KEY) {
         return m_hasFreeKey ? m_freeValue : NO_VALUE;
     }
@@ -79,7 +78,11 @@ bool IntMap::contains(int key) {
 }
 
 bool IntMap::add(int key) {
-    return NO_VALUE != put(key, 666);
+    //Test Case
+    //Once done refactor;
+    int x = put(key, 666);
+    //cout << "put returns " << x << endl;
+    return NO_VALUE != x;
 }
 
 bool IntMap::mDelete(int key) {
@@ -127,6 +130,7 @@ IntStack IntMap::interect(vector<IntMap> &maps, vector<IntMap> &vmaps) {
 }
 
 int IntMap::put(int key, int value) {
+    //cout << "Key is " << key << endl;
     if (key == FREE_KEY) {
         int ret = m_freeValue;
         if (!m_hasFreeKey) {
@@ -138,6 +142,8 @@ int IntMap::put(int key, int value) {
     }
     int ptr = (phiMix(key) & m_mask) << 1;
     int k = m_data[ptr];
+    //cout << "ptr is " << ptr << endl;
+    //cout << "k is " << m_data[ptr] << endl;
     if (k == FREE_KEY) {
         m_data[ptr] = key;
         m_data[ptr+1] = value;
@@ -158,18 +164,27 @@ int IntMap::put(int key, int value) {
     while (true) {
         ptr = ptr + 2 & m_mask2;
         k = m_data[ptr];
+
         if (k == FREE_KEY) {
+            //cout << "k == free" << endl;
+            //cout << "ptr is " << ptr << endl;
+            //cout << "k is " << k << endl;
             m_data[ptr] = key;
             m_data[ptr +1] = value;
+            //cout << m_data[ptr] << endl;
             if (m_size >= m_threshold) {
                 rehash(m_data.size()*2);
             }
             else {
+                //cout << "size is " << m_size << endl;
                 ++m_size;
             }
             return NO_VALUE;
         }
         else if (k == key) {
+            //cout << "k == key" << endl;
+            //cout << "ptr is " << ptr << endl;
+            //cout << "k is " << k << endl;
             int ret = m_data[ptr +1];
             m_data[ptr + 1] = value;
             return ret;
@@ -188,7 +203,8 @@ int IntMap::remove(int key) {
     }
     int ptr = (phiMix(key) & m_mask) << 1;
     int k = m_data[ptr];
-
+    //cout << "ptr is " << ptr << endl;
+    //cout << "k is " <<  k << endl;
     if (k == key) {
         int res = m_data[ptr + 1];
         shiftKeys(ptr);
@@ -218,13 +234,19 @@ int IntMap::size() {
 int IntMap::shiftKeys(int pos) {
     int last, slot;
     int k;
-    vector<int> data;
-    data = m_data;
+    //vector<int> data;
+    //int capacity = arraySize(i_size, m_fillFactor);
+    //data.reserve(capacity * 2);
+    //data = m_data;
     while (true) {
-        pos = (last = pos) + 2 & m_mask2;
+        last = pos;
+        pos = pos + 2 & m_mask2;
+        cout << "pos is " << pos << endl;
         while (true) {
-            if ((k = data[pos]) == FREE_KEY) {
-                data[last] = FREE_KEY;
+            k = m_data[pos];
+            if (k  == FREE_KEY) {
+                cout << "enter the first cond in 2nd loop" << endl;
+                m_data[last] = FREE_KEY;
                 return last;
             }
             slot = (phiMix(k) & m_mask) << 1;
@@ -233,8 +255,8 @@ int IntMap::shiftKeys(int pos) {
             }
             pos = pos + 2 & m_mask2;
         }
-        data[last] = k;
-        data[last + 1] = data[pos +1];
+        m_data[last] = k;
+        m_data[last + 1] = m_data[pos +1];
     }
 }
 
