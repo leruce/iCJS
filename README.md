@@ -53,5 +53,7 @@ Complete IMap file. Determine to adopt a new group into our group
 Work Order:
 IMap -> Toks -> Engine -> Prog
 
+~1500 Lines left to translate
+
 
 For different class for me to remember: Presentation on Nov 30 #5 Database
