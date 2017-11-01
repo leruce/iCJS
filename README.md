@@ -34,18 +34,26 @@ IMap: Need to Work On (Mid) Need to be done by 11/11
 
 Toks: Need to Work On (Hardish/ more tedious) 11/11
 
+Need to write it from scratch. 
+
 Engine: Need to Work On (Need to finish other first) 11/25
+
+Need to determine LinkedHashMap function in c++
 
 Prog: Need to Work On (Need to finish the other first) 11/25
 
-ObStack: Just add peek to IntStack (Easy) 10/31
+Do not need 40% of the code. Splitolater/customer/streamsupport removed
+
+ObStack: Done (Vector provide all the functions ie pop_back/push_back/back)
 
 
 Current Task:
-Write a Driver function to determine the first 5 files working state. 
-Determine if there any issues that arise from Driver function.
-1 Week to complete 10/31
+Complete IMap file. Determine to adopt a new group into our group
 
 Work Order:
-Driver -> Debug -> IMap -> Toks -> ObStack -> Engine -> Prog
+IMap -> Toks -> Engine -> Prog
 
+~1500 Lines left to translate
+
+
+For different class for me to remember: Presentation on Nov 30 #5 Database
