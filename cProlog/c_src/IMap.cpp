@@ -18,7 +18,7 @@ void IMap<T>::clear() {
 
 template <typename T>
 bool IMap<T>::put(T key, int val) {
-    unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
     IntMap *mVal;
     if (vals == Umap->end() ) {
        mVal = new IntMap();
@@ -33,7 +33,7 @@ bool IMap<T>::put(T key, int val) {
 template <typename T>
 IntMap IMap<T>::get(T key) {
     IntMap *mVal;
-    unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
     if (vals == Umap->end()) {
         mVal = new IntMap();
     }
@@ -46,7 +46,7 @@ IntMap IMap<T>::get(T key) {
 template <typename T>
 bool IMap<T>::remove(T key, int val) {
     IntMap *mVal;
-    unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
     mVal = &vals->second;
     bool ok = mVal->mDelete(val);
     if (mVal->isEmpty()) {
