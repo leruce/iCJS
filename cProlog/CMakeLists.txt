@@ -14,6 +14,8 @@ set(SOURCE_FILES
     c_src/Clause.h
     c_src/Spine.cpp
     c_src/Spine.h
-    c_src/main.cpp)
+    c_src/main.cpp
+    c_src/IMap.cpp
+    c_src/IMap.h)
 
-add_executable(cProlog ${SOURCE_FILES})
+add_executable(cProlog ${SOURCE_FILES} c_src/IMap.cpp c_src/IMap.h)
