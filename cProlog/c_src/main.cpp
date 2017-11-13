@@ -9,10 +9,8 @@ using namespace std;
 
 int main() {
 
-/*
     //This will be IntStack Test
     IntStack *n = new IntStack();
-
 
     if (n->isEmpty()) {
         cout << "Is Empty" << endl;
@@ -36,8 +34,6 @@ int main() {
     cout << "Index Value 2: " << n->get(2) << endl;
     cout << "Size is " << n->size() << endl;
     cout << "popped " << n->pop() << endl << endl;
-
-*/
 
 
     //Conductors
@@ -77,5 +73,6 @@ int main() {
     }
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
+
     return 0;
 }
