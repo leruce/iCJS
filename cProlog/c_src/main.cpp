@@ -10,8 +10,6 @@ using namespace std;
 int main() {
 
 
-
-   /*
     //This will be IntStack Test
     IntStack *m = new IntStack();
     IntStack *n = new IntStack(10);
@@ -38,11 +36,11 @@ int main() {
     cout << "Index Value 2: " << m->get(2) << endl;
     cout << "Size is " << m->size() << endl;
     cout << "popped " << m->pop() << endl;
-*/
 
 
 
-    /*
+/*
+
     //Conductors
     IntMap *m = new IntMap();
     IntMap *n = new IntMap(16);
@@ -83,6 +81,6 @@ int main() {
 
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
-    */
+*/
     return 0;
 }
