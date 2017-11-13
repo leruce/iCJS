@@ -42,7 +42,7 @@ void IntMap::init() {
     m_mask2 = capacity *2 -1;
 
     //m_data = new int[capacity*2];
-    m_data.reserve(capacity*2);
+    m_data.resize(capacity*2);
     m_threshold = (int) (capacity * m_fillFactor);
 }
 
@@ -80,6 +80,7 @@ bool IntMap::contains(int key) {
 bool IntMap::add(int key) {
     //Test Case
     //Once done refactor;
+    //cout <<"Fails Here" << endl;
     int x = put(key, 666);
     //cout << "put returns " << x << endl;
     return NO_VALUE != x;
@@ -140,8 +141,11 @@ int IntMap::put(int key, int value) {
         m_freeValue = value;
         return ret;
     }
+
     int ptr = (phiMix(key) & m_mask) << 1;
+    //cout << "Crash here for some reason" << endl;
     int k = m_data[ptr];
+    //cout << "Crash here for some reason after trying to find k" << endl;
     //cout << "ptr is " << ptr << endl;
     //cout << "k is " << m_data[ptr] << endl;
     if (k == FREE_KEY) {
@@ -241,11 +245,11 @@ int IntMap::shiftKeys(int pos) {
     while (true) {
         last = pos;
         pos = pos + 2 & m_mask2;
-        cout << "pos is " << pos << endl;
+        //cout << "pos is " << pos << endl;
         while (true) {
             k = m_data[pos];
             if (k  == FREE_KEY) {
-                cout << "enter the first cond in 2nd loop" << endl;
+               // cout << "enter the first cond in 2nd loop" << endl;
                 m_data[last] = FREE_KEY;
                 return last;
             }
@@ -268,7 +272,7 @@ void IntMap::rehash(int newCapacity) {
     int oldCapacity = m_data.size();
     vector<int> oldData = m_data;
 
-    m_data.reserve(newCapacity);
+    m_data.resize(newCapacity);
     m_size = m_hasFreeKey ? 1 : 0;
 
     for (int i = 0; i < oldCapacity; i += 2) {

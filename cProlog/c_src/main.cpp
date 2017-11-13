@@ -9,52 +9,47 @@ using namespace std;
 
 int main() {
 
-
-
-   /*
+/*
     //This will be IntStack Test
-    IntStack *m = new IntStack();
-    IntStack *n = new IntStack(10);
+    IntStack *n = new IntStack();
 
-    if (m->isEmpty()) {
+
+    if (n->isEmpty()) {
         cout << "Is Empty" << endl;
     }
     else {
         cout << "not empty" << endl;
     }
-    cout << m->size();
+    cout << n->size();
 
-    m->push(3);
-    cout << "Current Top " << m->getTop() << endl;
+    n->push(3);
+    cout << "Current Top " << n->getTop() << endl;
 
-    m->push(6);
-    cout << "Current Top " << m->getTop() << endl;
+    n->push(6);
+    cout << "Current Top " << n->getTop() << endl;
 
-    cout << "Index Value 1: " << m->get(1) << endl;
-    cout << "Index Value 2: " << m->get(2) << endl;
-    m->set(1, 5);
-    cout << "Index Value 1: " << m->get(1) << endl;
-    m->set(2,3);
-    cout << "Index Value 2: " << m->get(2) << endl;
-    cout << "Size is " << m->size() << endl;
-    cout << "popped " << m->pop() << endl;
+    cout << "Index Value 1: " << n->get(1) << endl;
+    cout << "Index Value 2: " << n->get(2) << endl;
+    n->set(1, 5);
+    cout << "Index Value 1: " << n->get(1) << endl;
+    n->set(2,3);
+    cout << "Index Value 2: " << n->get(2) << endl;
+    cout << "Size is " << n->size() << endl;
+    cout << "popped " << n->pop() << endl << endl;
+
 */
 
 
-
-    /*
     //Conductors
     IntMap *m = new IntMap();
-    IntMap *n = new IntMap(16);
-    IntMap *z = new IntMap(16, .8f);
-    //cout << "In main size" << m->size() << endl;
     if (m->add(1)) {
         cout << "failed" << endl;
     }
     else {
         cout << "added" << endl;
     }
-    //cout <<"main size is " << m->size() << endl;
+
+    cout <<"main size is " << m->size() << endl;
     if (m->add(2)) {
         cout << "failed" << endl;
     }
@@ -68,7 +63,7 @@ int main() {
     else {
         cout << "Is not Empty" << endl;
     }
-    if (m->contains(1)) {
+    if (m->contains(2)) {
         cout << "Contain Works" << endl;
     }
     else {
@@ -80,9 +75,7 @@ int main() {
     else {
         cout << "delete doesnt work" << endl;
     }
-
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
-    */
     return 0;
 }
