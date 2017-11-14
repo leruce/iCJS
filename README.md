@@ -55,5 +55,9 @@ IMap -> Toks -> Engine -> Prog
 
 ~1350 Lines left to translate
 
+Toks File: Just use a istringstream or boost::Tokenizer. no need for MakeTok/Tok/.../ 
+
+Just need the toSentence function and the keyword denoted. for engine to work
+
 
 For different class for me to remember: Presentation on Nov 30 #5 Database
