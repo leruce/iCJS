@@ -25,6 +25,7 @@ CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: ../c_src/IntStack.h
 CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: ../c_src/Spine.cpp
 CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: ../c_src/Spine.h
 
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IMap.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntList.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntMap.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntStack.h

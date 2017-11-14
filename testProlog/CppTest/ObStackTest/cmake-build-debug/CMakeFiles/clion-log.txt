@@ -1,0 +1,4 @@
+C:\Users\Bidbip\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\172.4343.16\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Bidbip\ClionProjects\ObStackTest
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Bidbip/ClionProjects/ObStackTest/cmake-build-debug

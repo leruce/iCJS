@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Bidbip/ClionProjects/ObStackTest/ObStack.cpp
+ObStack.h
+C:/Users/Bidbip/ClionProjects/ObStackTest/ObStack.h
+
+C:/Users/Bidbip/ClionProjects/ObStackTest/ObStack.h
+vector
+-
+
+C:/Users/Bidbip/ClionProjects/ObStackTest/main.cpp
+iostream
+-
+ObStack.h
+C:/Users/Bidbip/ClionProjects/ObStackTest/ObStack.h
+

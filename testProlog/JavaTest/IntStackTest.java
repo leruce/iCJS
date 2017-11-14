@@ -1,3 +1,17 @@
+/*
+Garrett Addington
+This file  is suppose to be in the same location with the other soruce files when building
+This is the Test file using junit
+* Output of unittest
+s.getTop : -1= -1
+s.getTop : 0= 0
+s.getTop : 1= 1
+s.pop() : 10= 10
+s.size() : 3= 3
+
+Which is the exact same as the c++ one give.
+*/
+
 package iProlog;
 
 import static org.junit.Assert.*;
@@ -19,14 +33,14 @@ public class IntStackTest {
 		assertEquals(s.getTop(), -1);
 		out.println("s.getTop : " + s.getTop() + "= -1");
 	}
-	
+
 	@Test
 	public void testPushStack() {
 		s.push(1);
 		assertEquals(s.getTop(), 0);
 		out.println("s.getTop : " + s.getTop() + "= 0");
 	}
-	
+
 	@Test
 	public void testPushStackTwice() {
 		s.push(1);
@@ -34,7 +48,7 @@ public class IntStackTest {
 		assertEquals(s.getTop(), 1);
 		out.println("s.getTop : " + s.getTop() + "= 1");
 	}
-	
+
 	@Test
 	public void testPopStack() {
 		s.push(12);
@@ -43,7 +57,7 @@ public class IntStackTest {
 		assertEquals(i, 10);
 		out.println("s.pop() : " + i + "= 10");
 	}
-	
+
 	@Test
 	public void testSize() {
 		s.push(2);
@@ -62,5 +76,5 @@ s.size() : 3= 3
 s.getTop : 0= 0
 s.pop() : 10= 10
 s.getTop : 1= 1
- 
+
  **/

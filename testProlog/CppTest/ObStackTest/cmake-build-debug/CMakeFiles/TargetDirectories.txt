@@ -1,0 +1,3 @@
+C:/Users/Bidbip/ClionProjects/ObStackTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Bidbip/ClionProjects/ObStackTest/cmake-build-debug/CMakeFiles/ObStackTest.dir
+C:/Users/Bidbip/ClionProjects/ObStackTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
