@@ -18,4 +18,4 @@ set(SOURCE_FILES
     c_src/IMap.cpp
     c_src/IMap.h)
 
-add_executable(cProlog ${SOURCE_FILES} c_src/IMap.cpp c_src/IMap.h)
+add_executable(cProlog ${SOURCE_FILES})

@@ -2,6 +2,20 @@
 // Created by Bidbip on 11/12/2017.
 //
 
+/*
+Garrett Addington
+
+output
+s.getTop: -1= -1
+s.getTop: 0= 0
+s.getTop: 1= 1
+s.pop(): 10= 10
+s.size(): 3= 3
+
+exact same as the one in java. works
+
+*/
+
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include "IntStack.h"
@@ -33,7 +47,7 @@ TEST_F(ClassDeclaration, testPushStackTwice) {
     obj.push(1);
     obj.push(2);
     ASSERT_EQ(obj.getTop(), 1);
-    std::cout << "s.getTop: " << obj.getTop() << "= 2" << std::endl;
+    std::cout << "s.getTop: " << obj.getTop() << "= 1" << std::endl;
 }
 TEST_F(ClassDeclaration, testPopStack) {
     obj.push(12);
@@ -64,5 +78,3 @@ s.size(): 3= 3
  *
  *
  */
-
-

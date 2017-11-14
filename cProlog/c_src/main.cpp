@@ -2,6 +2,7 @@
 #include "IntList.h"
 #include "IntStack.h"
 #include "IntMap.h"
+#include "IMap.h"
 
 using namespace std;
 
@@ -9,6 +10,7 @@ using namespace std;
 
 int main() {
 
+    /*
     //This will be IntStack Test
     IntStack *n = new IntStack();
 
@@ -73,6 +75,6 @@ int main() {
     }
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
-
+    */
     return 0;
 }
