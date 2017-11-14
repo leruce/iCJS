@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ObStackTest {
-	
+
 	public static ObStack o = new ObStack();
-	
+
 	@Test
 	public void testPush() {
 		System.out.println("Testing push........");
@@ -19,7 +19,7 @@ public class ObStackTest {
 		o.push(12);
 		System.out.println(o.get(o.size()-1)+" is pushed to the stack and stack size increased to: "+o.size());
 	}
-	
+
 	@Test
 	public void testPop() {
 		System.out.println("Testing pop......");
@@ -29,3 +29,16 @@ public class ObStackTest {
 		System.out.println(j.toString()+" is popped from the stack.\n");
 	}
 }
+
+
+
+/*
+
+First we pushed 10 into the stack.
+10 is popped from the stack.
+
+Testing push........
+Initially the stack size is: 0
+12 is pushed to the stack and stack size increased to: 1
+
+*/
