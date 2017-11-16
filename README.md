@@ -9,3 +9,12 @@ gcc main.cpp
 
 
 Garrett Addington.
+
+
+Git Commands uses:
+
+git branch Question2GarettAddington
+git add .
+git push Question2GarrettAddington
+git commit 
+
