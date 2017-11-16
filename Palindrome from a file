@@ -1,0 +1,81 @@
+#include "stdafx.h"
+#include <iostream>
+#include <fstream>// library that contains file input/output functions
+
+using namespace std;
+
+int main()
+{
+	int i, j, k, l;
+	int array_size = 4000; // define the size of character array
+	char * array = new char[array_size];
+	int position = 0; //this will be used incremently to fill characters in the array
+
+	char arr2[4000];
+
+	ifstream fin("palindromes.txt");
+
+	if (fin.is_open())
+	{
+		while (!fin.eof() && position < array_size)
+		{
+			fin.get(array[position]); //reading one character from file to array
+			position++;
+		}
+
+		array[position - 1] = '\0'; //placing character array terminating character
+
+									/* -------------Done read file and filling array -------------------*/
+
+	}
+	else
+	{
+		cout << "File could not be opened.";
+	}
+	cout << endl;
+
+	/*--------------------Getting rid of spaces and putting into lowercase---------------------- */
+
+	for (k = 0, l = 0; k <= strlen(array); k++)
+	{
+		if ((array[k] != ' ') && (ispunct(array[k]) == false))
+		{
+			//cout << tolower(array[k], locale());
+			arr2[l] = tolower(array[k]);
+			l++;
+		}
+	}
+
+	/*--------------------END---------------------- */
+
+	int len = strlen(arr2);
+
+	/*------------HELP WITH PALINDROME LOGIC------------------*/
+
+	//Variable used for checking palindrome
+	int status = 1;
+
+	//Iterating over string from front and back
+	for (i = 0, j = len - 1; i <= (len / 2); ++i, --j)
+	{
+		//Comparing characters
+		if (arr2[i] != arr2[j])
+		{
+			//If any of the character is not same, set status to 0
+			status = 0;
+		}
+	}
+
+	//Status = 1 represents Palindrome string
+	if (status == 1)
+	{
+		cout << "\n\n Is a Palindrome !!! \n\n";
+	}
+	//Status = 0 represents not a palindrome string
+	else
+	{
+		cout << "\n\n Not a Palindrome !!! \n\n";
+	}
+
+	return 0;
+}
