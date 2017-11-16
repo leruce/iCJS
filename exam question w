@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+		int i = 0, j = 0, valid = 1, found = 0;
+		char c, buffer[64], test[64];
+		printf ("please enter a lowercase word (max 20 charactors? "); //prompt user for command
+		c = getchar(); // get first char
+		
+		while(c != '\n' && i<63) // read into buffer until new line is typed
+		{
+			buffer[i++] = c;
+			c = getchar();
+			if (c != '\n')
+				if (c < 'a' || c > 'z')
+					valid = 0;
+		}
+		if (i>63) // if more than 64 chars typed, terminate
+		{	
+			valid = 0;
+		}
+		if (valid == 0)
+		{
+			printf("Invalid entry\n");
+			return 1;
+		}
+		i--;
+		while (j!=i && j < i)
+		{	
+		if(buffer[i] != buffer[j])
+			 valid = 0;
+		 i--;
+		 j++;
+			
+		}
+		if (valid == 1)
+			printf("Word is a palindrome\n");
+		
+	FILE *fp;
+	fp=fopen("wordlist.txt", "r");
+	
+	while(fscanf(fp, "%s", test) != EOF)
+	{
+		if (strcmp(buffer, test) == 0)
+			found = 1;
+		
+	}
+	
+	if (found == 1)
+		printf("word is in the list\n");
+	else
+		printf("word not found\n");
+	return 0;
+		
+		
+}
