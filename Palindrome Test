@@ -7,10 +7,29 @@ int main(){
     int i, length;
     int flag = 0;
     
+    //Check for input string and accept it
     cout << "Enter a string: "; 
     cin >> string1;
     
     cout << string1;
+    
+    //Check for palindrome
+    length = strlen(string1);
+    
+    for(i=0;i < length ;i++){
+        if(string1[i] != string1[length-i]){
+            flag = 1;
+            break;
+	   }
+	}
+    
+    if (flag) {
+        cout << string1 << " is not a palindrome" << endl; 
+    }    
+    else {
+        cout << string1 << " is a palindrome" << endl; 
+    }
+    
     
     return 0;
 }
