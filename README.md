@@ -7,6 +7,10 @@ Colleen Vanderbilt //Dropped
 
 Charles Goff
 
+Arafat Hasan
+Md Khorrom Khan
+Aashis Karki
+
 Project Purpose:
 
 We are porting the iProlog code into a C++ Verison.
