@@ -1,63 +1,11 @@
-2017 Project for CSCE 5430
+Question 2 
 
-Group Members:
-Garrett Addington
+Created in a different branch QuestionTwoGarrettAddington
 
-Colleen Vanderbilt //Dropped
+in order to use this program you compile the main.cpp
 
-Charles Goff
-
-Project Purpose:
-
-We are porting the iProlog code into a C++ Verison.
-
-The goal is to correctly port iProlog to be runned using GCC.
-We want to be able run prolog code using C++ engine.
+gcc main.cpp
+./a.out top1000Words.txt
 
 
-Currently main code is the main.cpp to run the code yo can just
-c++ compiler to compile the main.cpp
-
-Current Progress:
-
-IntList: Done
-
-IntStack: Done
-
-IntMap: Done
-
-Clause: Done
-
-Spline: Done
-
-IMap: Need to Work On (Mid) Need to be done by 11/11 80% done. 
-
-Toks: Need to Work On (Hardish/ more tedious) 11/11
-
-Need to write it from scratch. 
-
-Engine: Need to Work On (Need to finish other first) 11/25
-
-Need to determine LinkedHashMap function in c++
-
-Prog: Need to Work On (Need to finish the other first) 11/25
-
-Do not need 40% of the code. Splitolater/customer/streamsupport removed
-
-ObStack: Done (Vector provide all the functions ie pop_back/push_back/back)
-
-
-Current Task:
-Finish IMap and Toks files. So we can work on Engine/Prog
-
-Work Order:
-IMap -> Toks -> Engine -> Prog
-
-~1350 Lines left to translate
-
-Toks File: Just use a istringstream or boost::Tokenizer. no need for MakeTok/Tok/.../ 
-
-Just need the toSentence function and the keyword denoted. for engine to work
-
-
-For different class for me to remember: Presentation on Nov 30 #5 Database
+Garrett Addington.
