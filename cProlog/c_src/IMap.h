@@ -12,25 +12,25 @@
 #include <string>
 using namespace std;
 
-template <typename T>
+//template <class T>
 class IMap {
 public:
     IMap();
     void clear();
-    bool put(T key, int val);
-    IntMap get(T key);
-    bool remove(T key, int val);
-    bool remove(T key);
+    bool put(int key, int val);
+    IntMap get(int key);
+    bool remove(int key, int val);
+    bool remove(int key);
     int size();
     //Dont need keySet/keyIterator.
-    static vector<IMap<int>> create(int l);
-    static bool put(vector<IMap<int> > imaps, int pos, int key, int val );
-    static vector<int> get(vector<IMap<int> > imaps, vector<IntMap> vmaps, vector<int> keys);
-    static string show(vector<IMap<int> > imaps);
+    static vector<IMap> create(int l);
+    static bool put(vector<IMap> imaps, int pos, int key, int val );
+    static vector<int> get(vector<IMap> imaps, vector<IntMap> vmaps, vector<int> keys);
+    static string show(vector<IMap> imaps);
     static string show(vector<int> is);
 
 private:
-    unordered_map<T, IntMap> *Umap;
+    unordered_map<int, IntMap> *Umap;
 };
 
 

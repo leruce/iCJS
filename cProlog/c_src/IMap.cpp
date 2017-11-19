@@ -4,25 +4,26 @@
 
 #include "IMap.h"
 
-//template class IMap<int>;
-template <typename T>
-IMap<T>::IMap() {
-    Umap = new unordered_map<T, IntMap>;
+
+//template <class T>
+IMap::IMap() {
+    Umap = new unordered_map<int, IntMap>;
 }
 
 
-template <typename T>
-void IMap<T>::clear() {
+//template <class T>
+void IMap::clear() {
     Umap->clear();
 }
 
-template <typename T>
-bool IMap<T>::put(T key, int val) {
-    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+//template <class T>
+bool IMap::put(int key, int val) {
+    typename unordered_map<int, IntMap>::iterator vals = Umap->find(key);
     IntMap *mVal;
-    if (vals == Umap->end() ) {
-       mVal = new IntMap();
-        Umap->insert(key, mVal);
+    if (vals == Umap->end()) {
+        std::pair<int, IntMap> inserted = std::make_pair(key, IntMap());
+        Umap->insert(inserted);
+        mVal = &inserted.second;
     }
     else {
         mVal = &vals->second;
@@ -30,10 +31,10 @@ bool IMap<T>::put(T key, int val) {
     return mVal->add(val);
 }
 
-template <typename T>
-IntMap IMap<T>::get(T key) {
+//template <class T>
+IntMap IMap::get(int key) {
     IntMap *mVal;
-    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+    typename unordered_map<int, IntMap>::iterator vals = Umap->find(key);
     if (vals == Umap->end()) {
         mVal = new IntMap();
     }
@@ -43,10 +44,10 @@ IntMap IMap<T>::get(T key) {
     return *mVal;
 }
 
-template <typename T>
-bool IMap<T>::remove(T key, int val) {
+//template <class T>
+bool IMap::remove(int key, int val) {
     IntMap *mVal;
-    typename unordered_map<T, IntMap>::const_iterator vals = Umap->find(key);
+    typename unordered_map<int, IntMap>::iterator vals = Umap->find(key);
     mVal = &vals->second;
     bool ok = mVal->mDelete(val);
     if (mVal->isEmpty()) {
@@ -55,47 +56,47 @@ bool IMap<T>::remove(T key, int val) {
     return ok;
 }
 
-template <typename T>
-bool IMap<T>::remove(T key) {
+//template <class T>
+bool IMap::remove(int key) {
     return (0 != Umap->erase(key));
 }
 
-template <typename T>
-int IMap<T>::size() {
+//template <class T>
+int IMap::size() {
     int cSize = 0;
     for (auto it : *Umap) {
-        T key = it.first;
+        int key = it.first;
         IntMap vals = get(key);
         cSize += vals.size();
     }
     return cSize;
 }
 
-template <typename T>
-vector<IMap<int>> IMap<T>::create(int l) {
+//template <class T>
+vector<IMap> IMap::create(int l) {
     //goal is to create a vector of  IMaps
-    IMap<int> *first = new IMap<int>;
-    vector<IMap<int>> imaps;
+    IMap *first = new IMap;
+    vector<IMap> imaps;
     imaps.resize(l);
     return imaps;
 }
 
-template <typename T>
-bool IMap<T>::put(vector<IMap<int>> imaps, int pos, int key, int val) {
+//template <class T>
+bool IMap::put(vector<IMap> imaps, int pos, int key, int val) {
     return imaps[pos].put(key, val);
 }
 
-template <typename T>
-vector<int> IMap<T>::get(vector<IMap<int>> imaps, vector<IntMap> vmaps, vector<int> keys) {
+//template <class T>
+vector<int> IMap::get(vector<IMap> imaps, vector<IntMap> vmaps, vector<int> keys) {
 
 }
 
-template <typename T>
-string IMap<T>::show(vector<IMap<int>> imaps) {
+
+string IMap::show(vector<IMap> imaps) {
 
 }
 
-template <typename T>
-string IMap<T>::show(vector<int> is) {
+//template <class T>
+string IMap::show(vector<int> is) {
 
 }
