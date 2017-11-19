@@ -7,7 +7,7 @@
 
 #include "IntStack.h"
 #include <vector>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 class IntMap {
@@ -29,17 +29,17 @@ public:
     //String toString();
 private:
     std::vector<int> m_data;
-    bool m_hasFreeKey;
-    int m_freeValue;
-    float m_fillFactor;
-    int m_threshold;
-    int m_size;
-    int i_size;
-    int m_mask;
-    int m_mask2;
+    bool m_hasFreeKey =  false;
+    int m_freeValue = 0;
+    float m_fillFactor = 0;
+    int m_threshold = 0;
+    int m_size = 0;
+    int i_size = 0;
+    int m_mask = 0;
+    int m_mask2 = 0;
     int shiftKeys(int pos);
     void rehash(int newCapacity);
-    static long nextPowerOFTwo(long x);
+    static long long nextPowerOFTwo(long long x);
     static int arraySize(int expected, float f);
     static int phiMix(int x);
 };

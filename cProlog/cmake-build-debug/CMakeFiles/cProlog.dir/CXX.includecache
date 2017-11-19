@@ -51,7 +51,7 @@ IntStack.h
 C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack.h
 vector
 -
-math.h
+cmath
 -
 
 C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntMap1.cpp

@@ -43,6 +43,7 @@ void IntMap::init() {
 
     //m_data = new int[capacity*2];
     m_data.resize(capacity*2);
+    //std::fill(m_data.begin(), m_data.end(), 0);
     m_threshold = (int) (capacity * m_fillFactor);
 }
 
@@ -95,7 +96,7 @@ bool IntMap::isEmpty() {
 }
 
 void IntMap::intersect0(IntMap &m, vector<IntMap> &maps, vector<IntMap> &vmaps, IntStack &r) {
-    intVector data = m.m_data;
+    vector<int> data = m.m_data;
     for (int k = 0; k < data.size(); k += 2) {
         bool found = true;
 //            int key - data[k];
@@ -283,7 +284,7 @@ void IntMap::rehash(int newCapacity) {
     }
 }
 
-long IntMap::nextPowerOFTwo(long x) {
+long long IntMap::nextPowerOFTwo(long long x) {
     if (x == 0) {
         return 1;
     }
@@ -296,12 +297,13 @@ long IntMap::nextPowerOFTwo(long x) {
     return (x | x >> 32) + 1;
 }
 int IntMap::arraySize(int expected, float f) {
-    long s = fmax(2, nextPowerOFTwo((long)ceil(expected / f)));
+    //Fixed the build issue due to the bit size. needed static cast not old style
+    long long s = max(static_cast<long long>(2), nextPowerOFTwo(static_cast<long long>(ceil(expected / f))));
     if (s > 1 << 30) {
         cout << "error" << endl;
         return -1;
     }
-    return (int) s;
+    return static_cast<int> (s);
 }
 
 int IntMap::phiMix(int x) {

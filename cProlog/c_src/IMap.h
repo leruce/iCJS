@@ -24,13 +24,13 @@ public:
     int size();
     //Dont need keySet/keyIterator.
     static vector<IMap> create(int l);
-    static bool put(vector<IMap> imaps, int pos, int key, int val );
-    static vector<int> get(vector<IMap> imaps, vector<IntMap> vmaps, vector<int> keys);
-    static string show(vector<IMap> imaps);
-    static string show(vector<int> is);
+    static bool put(vector<IMap> &imaps, int pos, int key, int val );
+    static vector<int> get(vector<IMap> &imaps, vector<IntMap> &vmaps, vector<int> &keys);
+    static string show(vector<IMap> &imaps);
+    static string show(vector<int> &is);
 
 private:
-    unordered_map<int, IntMap> *Umap;
+    unordered_map<int, IntMap *> Umap;
 };
 
 

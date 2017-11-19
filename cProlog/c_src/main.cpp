@@ -10,7 +10,10 @@ using namespace std;
 
 int main() {
 
-
+    vector<IMap> x = IMap::create(4);
+    IMap::put(x, 0, 1, 100);
+    //IMap::put(x, 1, 2, 200);
+    //IMap::put(x, 2, 3, 400);
     /*
     //This will be IntStack Test
     IntStack *n = new IntStack();
@@ -38,7 +41,7 @@ int main() {
     cout << "Size is " << n->size() << endl;
     cout << "popped " << n->pop() << endl << endl;
 
-
+*/
     //Conductors
     IntMap *m = new IntMap();
     if (m->add(1)) {
@@ -76,6 +79,6 @@ int main() {
     }
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
-    */
+
     return 0;
 }
