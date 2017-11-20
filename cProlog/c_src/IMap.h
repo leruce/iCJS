@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 //template <class T>

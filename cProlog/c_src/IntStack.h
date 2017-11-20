@@ -26,7 +26,7 @@ public:
   void expand();
   void shrink();
   void reverse();
-
+  std::vector<int> toVec();
 
 private:
   std::vector<int> stack;

@@ -81,7 +81,35 @@ bool IMap::put(vector<IMap> &imaps, int pos, int key, int val) {
 
 //template <class T>
 vector<int> IMap::get(vector<IMap> &imaps, vector<IntMap> &vmaps, vector<int> &keys) {
+    int l = imaps.size();
+    vector<IntMap> ms;
+    vector<IntMap> vms;
 
+    for (int i = 0; i < l; i++) {
+        int key = keys[i];
+        if (key == 0) {
+            continue;
+        }
+        IntMap m = imaps[i].get(key);
+        ms.push_back(m);
+        vms.push_back(vmaps[i]);
+    }
+    vector<IntMap> ims;
+    vector<IntMap> vims;
+    for (int i = 0; i < ims.size(); i++) {
+        IntMap im = ms[i];
+        ims[i] = im;
+        IntMap vim = vms[i];
+        vims[i] = vim;
+    }
+    IntStack cs = IntMap::interect(ims, vims);
+    vector<int> is = cs.toVec();
+    for (int i = 0; i< is.size(); i++) {
+        is[i] = is[i] - 1;
+    }
+    //sort
+    sort(is.begin(), is.end());
+    return is;
 }
 
 

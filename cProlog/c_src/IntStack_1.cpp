@@ -86,3 +86,7 @@ void IntStack::reverse() {
       stack[l-i-1] = temp;
   }
 }
+std::vector<int> IntStack::toVec() {
+    std::vector<int> rVec(stack);
+    return rVec;
+}
