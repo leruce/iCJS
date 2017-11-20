@@ -34,7 +34,7 @@ Clause: Done
 
 Spline: Done
 
-IMap: Need to Work On (Mid) Need to be done by 11/11 80% done. 
+IMap: Need to Work On (Mid) Done
 
 Toks: Need to Work On (Hardish/ more tedious) 11/11
 
@@ -52,10 +52,10 @@ ObStack: Done (Vector provide all the functions ie pop_back/push_back/back)
 
 
 Current Task:
-Finish IMap and Toks files. So we can work on Engine/Prog
+Toks files. So we can work on Engine/Prog.
 
 Work Order:
-IMap -> Toks -> Engine -> Prog
+Toks -> Engine -> Prog -> Add in all the outputting data. 
 
 ~1350 Lines left to translate
 
