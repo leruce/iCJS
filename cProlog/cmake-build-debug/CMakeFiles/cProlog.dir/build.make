@@ -57,6 +57,7 @@ include CMakeFiles/cProlog.dir/progress.make
 include CMakeFiles/cProlog.dir/flags.make
 
 CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj: ../c_src/IntList.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\IntList.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\IntList.cpp
@@ -81,6 +82,7 @@ CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj.provides.build: CMakeFiles/cProlog.
 
 
 CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj: ../c_src/IntStack_1.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\IntStack_1.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\IntStack_1.cpp
@@ -105,6 +107,7 @@ CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj.provides.build: CMakeFiles/cProl
 
 
 CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj: ../c_src/IntMap1.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\IntMap1.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\IntMap1.cpp
@@ -129,6 +132,7 @@ CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj.provides.build: CMakeFiles/cProlog.
 
 
 CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj: ../c_src/Clause.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\Clause.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Clause.cpp
@@ -153,6 +157,7 @@ CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj.provides.build: CMakeFiles/cProlog.d
 
 
 CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj: ../c_src/Spine.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\Spine.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Spine.cpp
@@ -177,6 +182,7 @@ CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj.provides.build: CMakeFiles/cProlog.di
 
 
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cProlog.dir/c_src/main.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\main.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\main.cpp
@@ -201,6 +207,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj.provides.build: CMakeFiles/cProlog.dir
 
 
 CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj: ../c_src/IMap.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\IMap.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\IMap.cpp

@@ -1,4 +1,7 @@
 C:\Users\Bidbip\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\172.4343.16\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog
+-- Boost version: 1.65.1
+Found boost
 -- Configuring done
+WARNING: Target "cProlog" requests linking to directory "C:/boost/boost_1_65_1/libs".  Targets may link only to libraries.  CMake is dropping the item.
 -- Generating done
 -- Build files have been written to: C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug

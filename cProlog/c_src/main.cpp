@@ -3,15 +3,29 @@
 #include "IntStack.h"
 #include "IntMap.h"
 #include "IMap.h"
+#include <boost/variant.hpp>
 
 using namespace std;
 
 
+boost::variant<int, vector<int>> checkfunc(int x) {
+    boost::variant<int, vector<int>> a;
+    if (x == 0) {
+        a = 3.0;
+    }
+    else {
+        a = vector<int>();
+    }
+    return a;
+};
 
 int main() {
+    boost::variant<int, vector<int>> a = checkfunc(2);
+    //http://www.bnikolic.co.uk/boostqf/variant.html
+    cout << a << endl;
 
-    vector<IMap> x = IMap::create(4);
-    IMap::put(x, 0, 1, 100);
+    //vector<IMap> x = IMap::create(4);
+    //IMap::put(x, 0, 1, 100);
     //IMap::put(x, 1, 2, 200);
     //IMap::put(x, 2, 3, 400);
     /*
@@ -41,7 +55,7 @@ int main() {
     cout << "Size is " << n->size() << endl;
     cout << "popped " << n->pop() << endl << endl;
 
-*/
+
     //Conductors
     IntMap *m = new IntMap();
     if (m->add(1)) {
@@ -79,6 +93,6 @@ int main() {
     }
     cout << "Done with code" << endl;
     cout << "main size is " << m->size() << endl;
-
+*/
     return 0;
 }
