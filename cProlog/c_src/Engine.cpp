@@ -3,16 +3,12 @@
 namespace iProlog
 {
 
-	Engine::Engine(const std::wstring &fname) : clauses(dload(fname)), cls(toNums(clauses)), syms(new LinkedHashMap<std::wstring, int>()), slist(std::vector<std::wstring>()), trail(new IntStack()), ustack(new IntStack()), imaps(index(clauses, vmaps)), vmaps(vcreate(MAXIND))
+	Engine::Engine(const std::string &fname) : clauses(dload(fname)), cls(toNums(clauses)), syms(new linked_map<std::string, int>()), slist(std::vector<std::wstring>()), trail(new IntStack()), ustack(new IntStack()), imaps(index(clauses, vmaps)), vmaps(vcreate(MAXIND))
 	{
 
 	  makeHeap();
-
-
-
-
-	  query = init();
-
+		query = init();
+		
 	}
 
 int Engine::MINSIZE = 1 << 15;
@@ -32,7 +28,7 @@ int Engine::MINSIZE = 1 << 15;
 	  return -w & 7;
 	}
 
-	int Engine::addSym(const std::wstring &sym)
+	int Engine::addSym(const std::string &sym)
 	{
 	  boost::optional<int> I = syms->get(sym);
 	  if (nullptr == I)
@@ -45,7 +41,7 @@ int Engine::MINSIZE = 1 << 15;
 	  return I.value();
 	}
 
-	std::wstring Engine::getSym(int const w)
+	std::string Engine::getSym(int const w)
 	{
 	  if (w < 0 || w >= slist.size())
 	  {
@@ -109,7 +105,7 @@ int Engine::MINSIZE = 1 << 15;
 	  }
 	}
 
-	std::vector<std::vector<std::wstring>> Engine::maybeExpand(std::vector<std::wstring> &Ws)
+	std::vector<std::vector<std::wstring>> Engine::maybeExpand(std::vector<std::string> &Ws)
 	{
 	  const std::wstring W = Ws[0];
 	  if (W.length() < 2 || L"l:" != W.substr(0, 2))
@@ -135,17 +131,17 @@ int Engine::MINSIZE = 1 << 15;
 
 	}
 
-	std::vector<std::vector<std::wstring>> Engine::mapExpand(std::vector<std::vector<std::wstring>> &Wss)
+	std::vector<std::vector<std::wstring>> Engine::mapExpand(std::vector<std::vector<std::string>> &Wss)
 	{
-	  const std::vector<std::vector<std::wstring>> Rss = std::vector<std::vector<std::wstring>>();
+	  const std::vector<std::vector<std::string>> Rss = std::vector<std::vector<std::string>>();
 	  for (auto Ws : Wss)
 	  {
 
-		const std::vector<std::vector<std::wstring>> Hss = maybeExpand(Ws);
+		const std::vector<std::vector<std::string>> Hss = maybeExpand(Ws);
 
 		if (nullptr == Hss)
 		{
-		  const std::vector<std::wstring> ws = std::vector<std::wstring>(Ws.size());
+		  const std::vector<std::string> ws = std::vector<std::string>(Ws.size());
 		  for (int i = 0; i < ws.size(); i++)
 		  {
 			ws[i] = Ws.get(i);
@@ -163,10 +159,10 @@ int Engine::MINSIZE = 1 << 15;
 	  return Rss;
 	}
 
-	std::vector<Clause*> Engine::dload(const std::wstring &s)
+	std::vector<Clause*> Engine::dload(const std::string &s)
 	{
 	  constexpr bool fromFile = true;
-	  const std::vector<std::vector<std::vector<std::wstring>>> Wsss = Toks::toSentences(s, fromFile);
+	  const std::vector<std::vector<std::vector<std::string>>> Wsss = Toks::toSentences(s, fromFile);
 
 	  const std::vector<Clause*> Cs = std::vector<Clause*>();
 
@@ -174,11 +170,11 @@ int Engine::MINSIZE = 1 << 15;
 	  {
 		// clause starts here
 
-		LinkedHashMap<std::wstring, IntStack*> * const refs = new LinkedHashMap<std::wstring, IntStack*>();
+		linked_map<std::string, IntStack*> * const refs = new linked_map<std::string, IntStack*>();
 		IntStack * const cs = new IntStack();
 		IntStack * const gs = new IntStack();
 
-		const std::vector<std::vector<std::wstring>> Rss = mapExpand(Wss);
+		const std::vector<std::vector<std::string>> Rss = mapExpand(Wss);
 		int k = 0;
 		for (auto ws : Rss)
 		{
@@ -199,7 +195,7 @@ int Engine::MINSIZE = 1 << 15;
 			  w = L"c:" + w;
 			}
 
-			const std::wstring L = w.substr(2);
+			const std::string L = w.substr(2);
 
 			switch (w.charAt(0))
 			{

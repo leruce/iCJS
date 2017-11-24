@@ -4,6 +4,15 @@
 #include <vector>
 #include <boost/optional.hpp>
 
+#include "Clause.h"
+#include "IntStack.h"
+#include "IMap.h"
+#include "Spine.h"
+#include "linked_map.hpp"
+
+
+using namespace cxxext;
+
 namespace iProlog
 {
 
@@ -26,7 +35,7 @@ namespace iProlog
 		  delete query;
 	  }
 
-	  Engine(const std::wstring &fname);
+	  Engine(const std::string &fname);
 
 
 	  std::vector<Clause*> const clauses;
@@ -35,7 +44,7 @@ namespace iProlog
 	  /// <summary>
 	  /// symbol table made of map + reverse map from ints to syms </summary>
 
-	  LinkedHashMap<std::wstring, int> *const syms;
+	  cxxext::linked_map<std::string, int> *const syms;
   private:
 	  const std::vector<std::wstring> slist;
 
@@ -54,7 +63,7 @@ namespace iProlog
   public:
 	  Spine *query;
 
-	  std::vector<IMap<int>*> const imaps;
+	  std::vector<IMap*> const imaps;
 	  std::vector<IntMap*> const vmaps;
 
 	
