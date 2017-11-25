@@ -51,7 +51,7 @@ Current Task:
 Toks files. So we can work on Engine/Prog.
 
 Work Order:
-Toks -> Engine -> Prog -> Figure out IMap/IntMap output style
+Toks -> Engine -> Prog -> Figure out IMap output style
 
 ~600 Lines left to translate
 
