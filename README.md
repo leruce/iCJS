@@ -38,11 +38,7 @@ IMap: Need to Work On (Mid) Done
 
 Toks: Need to Work On (Hardish/ more tedious) 11/11
 
-Need to write it from scratch. 
-
-Engine: Need to Work On (Need to finish other first) 11/25
-
-Need to determine LinkedHashMap function in c++
+Engine: Need to Work On (Need to finish other first) 11/25 Up to line 700 done. need to debug and clean out errors
 
 Prog: Need to Work On (Need to finish the other first) 11/25
 
@@ -55,13 +51,13 @@ Current Task:
 Toks files. So we can work on Engine/Prog.
 
 Work Order:
-Toks -> Engine -> Prog -> Add in all the outputting data. 
+Toks -> Engine -> Prog -> Figure out IMap output style
 
-~1350 Lines left to translate
+~600 Lines left to translate
 
 Toks File: Just use a istringstream or boost::Tokenizer. no need for MakeTok/Tok/.../ 
+Check using boost::tok function. 
 
-Just need the toSentence function and the keyword denoted. for engine to work
 
 
 For different class for me to remember: Presentation on Nov 30 #5 Database
