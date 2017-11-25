@@ -4,315 +4,50 @@
 
 #include "IntList.h"
 
-
-/*
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                   Public Constructors
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- */
-
-static IntList *empty = nullptr;
-/*
- ===========================================================================
- Function : IntList
- Parameters : none
- Object Constructed : IntList object, with int value in head = -1, tail set to Null
- Description : default constructor
- ===========================================================================
- */
-/*
-IntList::IntList()
-{
-    head = -1;
-    tail = NULL;
-
-
-}
-*/
-/*
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                   Private Constructors
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- */
-
-/*
- ===========================================================================
- Function : IntList
- Parameters : int value for head
- Object Constructed : IntList object, with int as value in head, tail set to Null
- Description : head value constructor
- ===========================================================================
- */
-
-
-IntList::IntList(int head)
-{
+IntList::IntList(int head) {
     this->head = head;
-    tail = NULL;
-
-
+    this->tail = nullptr;
 }
 
-
-/*
- ===========================================================================
- Function : IntList
- Parameters : int value for head (X), address of IntList (Xs)
- Object Constructed : IntList object, with int as value in head, tail set to address of Xs
- Description : constructor with head and tail
- ===========================================================================
- */
-
-IntList::IntList(int X, IntList *Xs)
-{
-
-    head = X;
-    tail = Xs;
-
-
+IntList::IntList(int head, IntList *xs) {
+    this->head = head;
+    this->tail = xs;
 }
 
-/*
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                   Getters
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- */
-
-/*
- ===================================================================
- Function: getHead
- Parameters: IntList
- Return: int
- Description: returns value of head of an IntList
- ===================================================================
- */
-int IntList::getHead(IntList Xs)
-{
-
-    return Xs.head;
-
+bool IntList::isEmpty(IntList *xs) {
+    return (nullptr == xs);
 }
 
-
-/*
-===================================================================
-Function: gethead
-Parameters: IntList
-Return: int
-Description: returns value of head of an IntList
-===================================================================
-*/
-int IntList::getHead(IntList *Xs)
-{
-
-    return Xs->head;
-
+int IntList::getHead(IntList *xs) {
+    return xs->head;
 }
-
-
-/*
- ===================================================================
- Function: getTail
- Parameters: IntList
- Return: pointer to IntList
- Description: return pointer to value following head in the IntList
- ===================================================================
- */
-IntList * IntList::getTail(IntList Xs)
-{
-    return Xs.tail;
-
+IntList * IntList::getTail(IntList *xs) {
+    return xs->tail;
 }
-
-/*
- ===================================================================
- Function: getTail
- Parameters: pointer to IntList
- Return: pointer to IntListP
- Description: return pointer to value following head in the IntList
- ===================================================================
- */
-IntList * IntList::getTail(IntList *Xs)
-{
-    return Xs->tail;
-
+IntList * IntList::cons(int x, IntList *xs) {
+    return new IntList(x, xs);
 }
-/*
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                   Functions
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- */
-/*
- ===================================================================
- Function: isEmpty
- Parameters: IntList
- Return: bool
- Description: Checks to see if the IntList is empty
- ===================================================================
- */
-
-bool IntList::isEmpty(IntList Xs)
-{
-    if(Xs.tail == NULL)
-        return true;
-    else
-        return false;
-}
-
-
-/*
- ===================================================================
- Function: isEmpty
- Parameters: pointer to IntList
- Return: bool
- Description: Checks to see if the IntList is empty
- ===================================================================
- */
-
-bool IntList::isEmpty(IntList * Xs)
-{
-    if(Xs->tail == NULL)
-        return true;
-    else
-        return false;
-}
-
-
-/*
- ===================================================================
- Function: cons
- Parameters: int value for head, pointer to an IntList
- Return: pointer to IntList with new head added
- Description: Add int as new head to IntList
- ===================================================================
- */
-
-IntList * IntList::cons(int X, IntList *Xs)
-{
-    IntList *temp = new IntList(X, Xs);
-    return temp;
-
-}
-
-
-
-/*
- ===================================================================
- Function: app
- Parameters: vector of integers, pointer to an IntList
- Return: IntList
- Description: returns pointer to an IntList with all ints in vector added to head of IntList passed,
- append starting with the last int in the array and moving up to first int in vector
- ===================================================================
- */
-
-IntList * IntList::app(std::vector <int> xs, IntList *Ys)
-{
-    IntListPtr ZsPtr = Ys;
-    IntList *Zs = Ys;
-    for (int index = xs.size()-1; index >= 0; index--)
-    {
-        ZsPtr = cons(xs[index], Zs);
-        Zs = ZsPtr;
+IntList * IntList::app(std::vector<int> xs, IntList *ys) {
+    IntList *zs = ys;
+    for (int i = xs.size() - 1; i >= 0; i--) {
+        zs = cons(xs[i], zs);
     }
-
-    return Zs;
+    return zs;
 }
-
-
-/*
- ===================================================================
- Function: toInts
- Parameters: IntList
- Return: IntStack
- Description: adds an IntList onto an IntStack
- ===================================================================
- */
-IntStack * IntList::toInts(IntList *Xs)
-{
+IntStack * IntList::toInts(IntList *Xs) {
     IntStack *is = new IntStack();
-    bool empty = false;
-    IntListPtr copyPtr = Xs;
     IntList *copy = Xs;
 
-    while (copyPtr != NULL)
-    {
-        is->push(Xs->head);
-        copyPtr = getTail(copy);
-        copy = copyPtr;
+    while (copy != nullptr) {
+        is->push(copy->head);
+        copy = getTail(copy);
     }
     return is;
 }
-
-/*
- ===================================================================
- Function: len
- Parameters: IntList
- Return: int
- Description: returns an int with the number of ints in the IntList
- ===================================================================
- */
-int IntList::len(IntList *Xs)
-{
-    int size = 0;
-    IntListPtr copyPtr = Xs;
-    IntList *copy = Xs;
-
-    while (copyPtr != NULL)
-    {
-        size++;
-
-        copyPtr = getTail(copy);
-        copy = copyPtr;
-
-    }
-
-
-    return size;
-
+int IntList::len(IntList *xs) {
+    return toInts(xs)->size();
 }
 
-/*
- ===================================================================
- Function: toString
- Parameters: none
- Return: string
- Description: not really sure what this does
- ===================================================================
- */
-std::string IntList::toString()
-{
-//    return toInts(this).toString();
-    std::string str = "what?";
-    return str;
+std::string IntList::toString() {
+    return toInts(this)->toString();
 }
-
-
-/*
- ===================================================================
- Function:
- Parameters:
- Return:
- Description:
- ===================================================================
- */
-
-/*
- ===================================================================
- Function:
- Parameters:
- Return:
- Description:
- ===================================================================
- */
-
-
-/*
- ===================================================================
- Function:
- Parameters:
- Return:
- Description:
- ===================================================================
- */
-

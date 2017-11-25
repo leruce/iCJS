@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 
 class IntStack {
@@ -15,7 +16,7 @@ public:
   IntStack(int size);
   void init(int size);
   int getTop();
-  int setTop();
+  int setTop(int top);
   void clear();
   bool isEmpty();
   void push(int i);
@@ -26,6 +27,7 @@ public:
   void expand();
   void shrink();
   void reverse();
+  std::string toString();
   std::vector<int> toVec();
 
 private:

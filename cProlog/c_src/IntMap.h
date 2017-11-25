@@ -22,11 +22,11 @@ public:
     bool mDelete(int key);
     bool isEmpty();
     static void intersect0(IntMap &m, vector<IntMap> &maps, vector<IntMap> &vmaps, IntStack &r);
-    static IntStack interect(vector<IntMap> &maps, vector<IntMap> &vmaps);
+    static IntStack intersect(vector<IntMap> &maps, vector<IntMap> &vmaps);
     int put(int key, int value);
     int remove(int key);
     int size();
-    //String toString();
+    string toString();
 private:
     std::vector<int> m_data;
     bool m_hasFreeKey =  false;

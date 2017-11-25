@@ -102,7 +102,7 @@ vector<int> IMap::get(vector<IMap> &imaps, vector<IntMap> &vmaps, vector<int> &k
         IntMap vim = vms[i];
         vims[i] = vim;
     }
-    IntStack cs = IntMap::interect(ims, vims);
+    IntStack cs = IntMap::intersect(ims, vims);
     vector<int> is = cs.toVec();
     for (int i = 0; i< is.size(); i++) {
         is[i] = is[i] - 1;

@@ -124,7 +124,7 @@ void IntMap::intersect0(IntMap &m, vector<IntMap> &maps, vector<IntMap> &vmaps, 
     }
 }
 
-IntStack IntMap::interect(vector<IntMap> &maps, vector<IntMap> &vmaps) {
+IntStack IntMap::intersect(vector<IntMap> &maps, vector<IntMap> &vmaps) {
     IntStack *r = new IntStack();
     intersect0(maps[0], maps, vmaps, *r);
     intersect0(vmaps[0], maps, vmaps, *r);
@@ -309,4 +309,24 @@ int IntMap::arraySize(int expected, float f) {
 int IntMap::phiMix(int x) {
     int h = x * INT_PHI;
     return h ^ h >> 16;
+}
+
+string IntMap::toString() {
+    string str;
+    stringstream ss;
+    ss << "{";
+    int l = m_data.size();
+    bool first = true;
+    for (int i = 0; i < l; i += 2) {
+        int v = m_data[i];
+        if (v != FREE_KEY) {
+            if (!first) {
+                ss << ",";
+            }
+            first = false;
+            ss << (v - 1);
+        }
+    }
+    ss << "}";
+    return ss.str();
 }

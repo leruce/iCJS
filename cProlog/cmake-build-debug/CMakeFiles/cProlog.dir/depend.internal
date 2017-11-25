@@ -32,11 +32,22 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp
  C:/boost/boost_1_65_1/boost/aligned_storage.hpp
+ C:/boost/boost_1_65_1/boost/array.hpp
  C:/boost/boost_1_65_1/boost/assert.hpp
  C:/boost/boost_1_65_1/boost/blank.hpp
  C:/boost/boost_1_65_1/boost/blank_fwd.hpp
  C:/boost/boost_1_65_1/boost/call_traits.hpp
  C:/boost/boost_1_65_1/boost/checked_delete.hpp
+ C:/boost/boost_1_65_1/boost/concept/assert.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/backward_compatibility.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/borland.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/concept_def.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/concept_undef.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/general.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/has_constraints.hpp
+ C:/boost/boost_1_65_1/boost/concept/detail/msvc.hpp
+ C:/boost/boost_1_65_1/boost/concept/usage.hpp
+ C:/boost/boost_1_65_1/boost/concept_check.hpp
  C:/boost/boost_1_65_1/boost/config.hpp
  C:/boost/boost_1_65_1/boost/config/compiler/borland.hpp
  C:/boost/boost_1_65_1/boost/config/compiler/clang.hpp
@@ -69,6 +80,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/config/detail/select_stdlib_config.hpp
  C:/boost/boost_1_65_1/boost/config/detail/suffix.hpp
  C:/boost/boost_1_65_1/boost/config/no_tr1/cmath.hpp
+ C:/boost/boost_1_65_1/boost/config/no_tr1/complex.hpp
  C:/boost/boost_1_65_1/boost/config/no_tr1/utility.hpp
  C:/boost/boost_1_65_1/boost/config/platform/aix.hpp
  C:/boost/boost_1_65_1/boost/config/platform/amigaos.hpp
@@ -100,16 +112,25 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/config/stdlib/xlcpp_zos.hpp
  C:/boost/boost_1_65_1/boost/config/user.hpp
  C:/boost/boost_1_65_1/boost/config/workaround.hpp
+ C:/boost/boost_1_65_1/boost/container/container_fwd.hpp
+ C:/boost/boost_1_65_1/boost/container/detail/std_fwd.hpp
  C:/boost/boost_1_65_1/boost/core/addressof.hpp
  C:/boost/boost_1_65_1/boost/core/checked_delete.hpp
  C:/boost/boost_1_65_1/boost/core/demangle.hpp
  C:/boost/boost_1_65_1/boost/core/enable_if.hpp
  C:/boost/boost_1_65_1/boost/core/no_exceptions_support.hpp
  C:/boost/boost_1_65_1/boost/core/noncopyable.hpp
+ C:/boost/boost_1_65_1/boost/core/swap.hpp
  C:/boost/boost_1_65_1/boost/cstdint.hpp
  C:/boost/boost_1_65_1/boost/current_function.hpp
+ C:/boost/boost_1_65_1/boost/detail/basic_pointerbuf.hpp
  C:/boost/boost_1_65_1/boost/detail/call_traits.hpp
  C:/boost/boost_1_65_1/boost/detail/container_fwd.hpp
+ C:/boost/boost_1_65_1/boost/detail/endian.hpp
+ C:/boost/boost_1_65_1/boost/detail/fenv.hpp
+ C:/boost/boost_1_65_1/boost/detail/indirect_traits.hpp
+ C:/boost/boost_1_65_1/boost/detail/iterator.hpp
+ C:/boost/boost_1_65_1/boost/detail/lcast_precision.hpp
  C:/boost/boost_1_65_1/boost/detail/no_exceptions_support.hpp
  C:/boost/boost_1_65_1/boost/detail/reference_content.hpp
  C:/boost/boost_1_65_1/boost/detail/templated_streams.hpp
@@ -123,11 +144,47 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/functional/hash/hash.hpp
  C:/boost/boost_1_65_1/boost/functional/hash/hash_fwd.hpp
  C:/boost/boost_1_65_1/boost/functional/hash_fwd.hpp
+ C:/boost/boost_1_65_1/boost/integer.hpp
  C:/boost/boost_1_65_1/boost/integer/common_factor_ct.hpp
  C:/boost/boost_1_65_1/boost/integer/static_log2.hpp
  C:/boost/boost_1_65_1/boost/integer_fwd.hpp
+ C:/boost/boost_1_65_1/boost/integer_traits.hpp
+ C:/boost/boost_1_65_1/boost/iterator.hpp
+ C:/boost/boost_1_65_1/boost/iterator/advance.hpp
+ C:/boost/boost_1_65_1/boost/iterator/detail/config_def.hpp
+ C:/boost/boost_1_65_1/boost/iterator/detail/config_undef.hpp
+ C:/boost/boost_1_65_1/boost/iterator/detail/enable_if.hpp
+ C:/boost/boost_1_65_1/boost/iterator/detail/facade_iterator_category.hpp
+ C:/boost/boost_1_65_1/boost/iterator/interoperable.hpp
+ C:/boost/boost_1_65_1/boost/iterator/iterator_adaptor.hpp
+ C:/boost/boost_1_65_1/boost/iterator/iterator_categories.hpp
+ C:/boost/boost_1_65_1/boost/iterator/iterator_concepts.hpp
+ C:/boost/boost_1_65_1/boost/iterator/iterator_facade.hpp
+ C:/boost/boost_1_65_1/boost/iterator/iterator_traits.hpp
+ C:/boost/boost_1_65_1/boost/iterator/reverse_iterator.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/bad_lexical_cast.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/converter_lexical.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/converter_lexical_streams.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/converter_numeric.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/inf_nan.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/is_character.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/lcast_char_constants.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/lcast_unsigned_converters.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/detail/widest_char.hpp
+ C:/boost/boost_1_65_1/boost/lexical_cast/try_lexical_convert.hpp
  C:/boost/boost_1_65_1/boost/limits.hpp
  C:/boost/boost_1_65_1/boost/math/common_factor_ct.hpp
+ C:/boost/boost_1_65_1/boost/math/policies/policy.hpp
+ C:/boost/boost_1_65_1/boost/math/special_functions/detail/fp_traits.hpp
+ C:/boost/boost_1_65_1/boost/math/special_functions/detail/round_fwd.hpp
+ C:/boost/boost_1_65_1/boost/math/special_functions/fpclassify.hpp
+ C:/boost/boost_1_65_1/boost/math/special_functions/math_fwd.hpp
+ C:/boost/boost_1_65_1/boost/math/special_functions/sign.hpp
+ C:/boost/boost_1_65_1/boost/math/tools/config.hpp
+ C:/boost/boost_1_65_1/boost/math/tools/promotion.hpp
+ C:/boost/boost_1_65_1/boost/math/tools/real_cast.hpp
+ C:/boost/boost_1_65_1/boost/math/tools/user.hpp
  C:/boost/boost_1_65_1/boost/move/adl_move_swap.hpp
  C:/boost/boost_1_65_1/boost/move/algo/move.hpp
  C:/boost/boost_1_65_1/boost/move/algorithm.hpp
@@ -161,6 +218,8 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/arg.hpp
  C:/boost/boost_1_65_1/boost/mpl/arg_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/assert.hpp
+ C:/boost/boost_1_65_1/boost/mpl/at.hpp
+ C:/boost/boost_1_65_1/boost/mpl/at_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/O1_size_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/adl_barrier.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/advance_backward.hpp
@@ -169,6 +228,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/aux_/arithmetic_op.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/arity.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/arity_spec.hpp
+ C:/boost/boost_1_65_1/boost/mpl/aux_/at_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/begin_end_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/clear_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/common_name_wknd.hpp
@@ -200,6 +260,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/aux_/config/ttp.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/config/use_preprocessed.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/config/workaround.hpp
+ C:/boost/boost_1_65_1/boost/mpl/aux_/contains_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/count_args.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/empty_impl.hpp
  C:/boost/boost_1_65_1/boost/mpl/aux_/find_if_pred.hpp
@@ -277,6 +338,9 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/bool_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/clear.hpp
  C:/boost/boost_1_65_1/boost/mpl/clear_fwd.hpp
+ C:/boost/boost_1_65_1/boost/mpl/comparison.hpp
+ C:/boost/boost_1_65_1/boost/mpl/contains.hpp
+ C:/boost/boost_1_65_1/boost/mpl/contains_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/deref.hpp
  C:/boost/boost_1_65_1/boost/mpl/distance.hpp
  C:/boost/boost_1_65_1/boost/mpl/distance_fwd.hpp
@@ -285,11 +349,14 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/equal.hpp
  C:/boost/boost_1_65_1/boost/mpl/equal_to.hpp
  C:/boost/boost_1_65_1/boost/mpl/eval_if.hpp
+ C:/boost/boost_1_65_1/boost/mpl/find.hpp
  C:/boost/boost_1_65_1/boost/mpl/find_if.hpp
  C:/boost/boost_1_65_1/boost/mpl/fold.hpp
  C:/boost/boost_1_65_1/boost/mpl/front.hpp
  C:/boost/boost_1_65_1/boost/mpl/front_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/front_inserter.hpp
+ C:/boost/boost_1_65_1/boost/mpl/greater.hpp
+ C:/boost/boost_1_65_1/boost/mpl/greater_equal.hpp
  C:/boost/boost_1_65_1/boost/mpl/has_xxx.hpp
  C:/boost/boost_1_65_1/boost/mpl/identity.hpp
  C:/boost/boost_1_65_1/boost/mpl/if.hpp
@@ -314,19 +381,23 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/lambda.hpp
  C:/boost/boost_1_65_1/boost/mpl/lambda_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/less.hpp
+ C:/boost/boost_1_65_1/boost/mpl/less_equal.hpp
  C:/boost/boost_1_65_1/boost/mpl/limits/arity.hpp
  C:/boost/boost_1_65_1/boost/mpl/limits/list.hpp
  C:/boost/boost_1_65_1/boost/mpl/limits/unrolling.hpp
+ C:/boost/boost_1_65_1/boost/mpl/limits/vector.hpp
  C:/boost/boost_1_65_1/boost/mpl/list.hpp
  C:/boost/boost_1_65_1/boost/mpl/logical.hpp
  C:/boost/boost_1_65_1/boost/mpl/long.hpp
  C:/boost/boost_1_65_1/boost/mpl/long_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/max_element.hpp
  C:/boost/boost_1_65_1/boost/mpl/min_max.hpp
+ C:/boost/boost_1_65_1/boost/mpl/multiplies.hpp
  C:/boost/boost_1_65_1/boost/mpl/negate.hpp
  C:/boost/boost_1_65_1/boost/mpl/next.hpp
  C:/boost/boost_1_65_1/boost/mpl/next_prior.hpp
  C:/boost/boost_1_65_1/boost/mpl/not.hpp
+ C:/boost/boost_1_65_1/boost/mpl/not_equal_to.hpp
  C:/boost/boost_1_65_1/boost/mpl/numeric_cast.hpp
  C:/boost/boost_1_65_1/boost/mpl/or.hpp
  C:/boost/boost_1_65_1/boost/mpl/pair.hpp
@@ -340,6 +411,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/push_front.hpp
  C:/boost/boost_1_65_1/boost/mpl/push_front_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/quote.hpp
+ C:/boost/boost_1_65_1/boost/mpl/remove_if.hpp
  C:/boost/boost_1_65_1/boost/mpl/reverse_fold.hpp
  C:/boost/boost_1_65_1/boost/mpl/same_as.hpp
  C:/boost/boost_1_65_1/boost/mpl/sequence_tag.hpp
@@ -350,21 +422,177 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/mpl/size_t_fwd.hpp
  C:/boost/boost_1_65_1/boost/mpl/sizeof.hpp
  C:/boost/boost_1_65_1/boost/mpl/tag.hpp
+ C:/boost/boost_1_65_1/boost/mpl/times.hpp
  C:/boost/boost_1_65_1/boost/mpl/transform.hpp
+ C:/boost/boost_1_65_1/boost/mpl/vector.hpp
  C:/boost/boost_1_65_1/boost/mpl/void.hpp
  C:/boost/boost_1_65_1/boost/mpl/void_fwd.hpp
+ C:/boost/boost_1_65_1/boost/next_prior.hpp
+ C:/boost/boost_1_65_1/boost/non_type.hpp
  C:/boost/boost_1_65_1/boost/noncopyable.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/bounds.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/cast.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/conversion_traits.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/converter.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/converter_policies.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/bounds.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/conversion_traits.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/converter.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/int_float_mixture.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/is_subranged.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/meta.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/numeric_cast_traits.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/old_numeric_cast.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/sign_mixture.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/detail/udt_builtin_mixture.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/int_float_mixture_enum.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/numeric_cast_traits.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/sign_mixture_enum.hpp
+ C:/boost/boost_1_65_1/boost/numeric/conversion/udt_builtin_mixture_enum.hpp
+ C:/boost/boost_1_65_1/boost/predef.h
+ C:/boost/boost_1_65_1/boost/predef/architecture.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/alpha.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/arm.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/blackfin.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/convex.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/ia64.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/m68k.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/mips.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/parisc.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/ppc.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/pyramid.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/rs6k.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/sparc.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/superh.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/sys370.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/sys390.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/x86.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/x86/32.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/x86/64.h
+ C:/boost/boost_1_65_1/boost/predef/architecture/z.h
+ C:/boost/boost_1_65_1/boost/predef/compiler.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/borland.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/clang.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/comeau.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/compaq.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/diab.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/digitalmars.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/dignus.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/edg.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/ekopath.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/gcc.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/gcc_xml.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/greenhills.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/hp_acc.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/iar.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/ibm.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/intel.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/kai.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/llvm.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/metaware.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/metrowerks.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/microtec.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/mpw.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/palm.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/pgi.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/sgi_mipspro.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/sunpro.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/tendra.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/visualc.h
+ C:/boost/boost_1_65_1/boost/predef/compiler/watcom.h
+ C:/boost/boost_1_65_1/boost/predef/detail/_cassert.h
+ C:/boost/boost_1_65_1/boost/predef/detail/_exception.h
+ C:/boost/boost_1_65_1/boost/predef/detail/comp_detected.h
+ C:/boost/boost_1_65_1/boost/predef/detail/endian_compat.h
+ C:/boost/boost_1_65_1/boost/predef/detail/os_detected.h
+ C:/boost/boost_1_65_1/boost/predef/detail/platform_detected.h
+ C:/boost/boost_1_65_1/boost/predef/detail/test.h
+ C:/boost/boost_1_65_1/boost/predef/hardware.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/arm.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/arm/versions.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/ppc.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/ppc/versions.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/x86.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/x86/versions.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/x86_amd.h
+ C:/boost/boost_1_65_1/boost/predef/hardware/simd/x86_amd/versions.h
+ C:/boost/boost_1_65_1/boost/predef/language.h
+ C:/boost/boost_1_65_1/boost/predef/language/objc.h
+ C:/boost/boost_1_65_1/boost/predef/language/stdc.h
+ C:/boost/boost_1_65_1/boost/predef/language/stdcpp.h
+ C:/boost/boost_1_65_1/boost/predef/library.h
+ C:/boost/boost_1_65_1/boost/predef/library/c.h
+ C:/boost/boost_1_65_1/boost/predef/library/c/_prefix.h
+ C:/boost/boost_1_65_1/boost/predef/library/c/gnu.h
+ C:/boost/boost_1_65_1/boost/predef/library/c/uc.h
+ C:/boost/boost_1_65_1/boost/predef/library/c/vms.h
+ C:/boost/boost_1_65_1/boost/predef/library/c/zos.h
+ C:/boost/boost_1_65_1/boost/predef/library/std.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/_prefix.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/cxx.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/dinkumware.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/libcomo.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/modena.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/msl.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/roguewave.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/sgi.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/stdcpp3.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/stlport.h
+ C:/boost/boost_1_65_1/boost/predef/library/std/vacpp.h
+ C:/boost/boost_1_65_1/boost/predef/make.h
+ C:/boost/boost_1_65_1/boost/predef/os.h
+ C:/boost/boost_1_65_1/boost/predef/os/aix.h
+ C:/boost/boost_1_65_1/boost/predef/os/amigaos.h
+ C:/boost/boost_1_65_1/boost/predef/os/android.h
+ C:/boost/boost_1_65_1/boost/predef/os/beos.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd/bsdi.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd/dragonfly.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd/free.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd/net.h
+ C:/boost/boost_1_65_1/boost/predef/os/bsd/open.h
+ C:/boost/boost_1_65_1/boost/predef/os/cygwin.h
+ C:/boost/boost_1_65_1/boost/predef/os/haiku.h
+ C:/boost/boost_1_65_1/boost/predef/os/hpux.h
+ C:/boost/boost_1_65_1/boost/predef/os/ios.h
+ C:/boost/boost_1_65_1/boost/predef/os/irix.h
+ C:/boost/boost_1_65_1/boost/predef/os/linux.h
+ C:/boost/boost_1_65_1/boost/predef/os/macos.h
+ C:/boost/boost_1_65_1/boost/predef/os/os400.h
+ C:/boost/boost_1_65_1/boost/predef/os/qnxnto.h
+ C:/boost/boost_1_65_1/boost/predef/os/solaris.h
+ C:/boost/boost_1_65_1/boost/predef/os/unix.h
+ C:/boost/boost_1_65_1/boost/predef/os/vms.h
+ C:/boost/boost_1_65_1/boost/predef/os/windows.h
+ C:/boost/boost_1_65_1/boost/predef/other.h
+ C:/boost/boost_1_65_1/boost/predef/other/endian.h
+ C:/boost/boost_1_65_1/boost/predef/platform.h
+ C:/boost/boost_1_65_1/boost/predef/platform/ios.h
+ C:/boost/boost_1_65_1/boost/predef/platform/mingw.h
+ C:/boost/boost_1_65_1/boost/predef/platform/windows_desktop.h
+ C:/boost/boost_1_65_1/boost/predef/platform/windows_phone.h
+ C:/boost/boost_1_65_1/boost/predef/platform/windows_runtime.h
+ C:/boost/boost_1_65_1/boost/predef/platform/windows_store.h
+ C:/boost/boost_1_65_1/boost/predef/version.h
+ C:/boost/boost_1_65_1/boost/predef/version_number.h
  C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/add.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/dec.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/detail/div_base.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/inc.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/mod.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/arithmetic/sub.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/array/data.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/array/elem.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/array/size.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/cat.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/comma_if.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/comparison/less_equal.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/comparison/not_equal.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/config/config.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/control/deduce_d.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/control/detail/dmc/while.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/control/detail/edg/while.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/control/detail/msvc/while.hpp
@@ -414,6 +642,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/preprocessor/logical/bitand.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/logical/bool.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/logical/compl.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/logical/not.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/punctuation/comma.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/punctuation/comma_if.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
@@ -432,15 +661,19 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/preprocessor/repetition/for.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/repetition/repeat.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/repetition/repeat_from_to.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/seq/cat.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/detail/is_empty.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/detail/split.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/elem.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/seq/enum.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/first_n.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/fold_left.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/seq/for_each_i.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/rest_n.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/seq.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/size.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/seq/subseq.hpp
+ C:/boost/boost_1_65_1/boost/preprocessor/seq/transform.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/slot/detail/def.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/slot/slot.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/stringize.hpp
@@ -452,8 +685,41 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/preprocessor/tuple/to_list.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/variadic/elem.hpp
  C:/boost/boost_1_65_1/boost/preprocessor/variadic/size.hpp
+ C:/boost/boost_1_65_1/boost/range/algorithm/equal.hpp
+ C:/boost/boost_1_65_1/boost/range/begin.hpp
+ C:/boost/boost_1_65_1/boost/range/concepts.hpp
+ C:/boost/boost_1_65_1/boost/range/config.hpp
+ C:/boost/boost_1_65_1/boost/range/const_iterator.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/begin.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/common.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/end.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/extract_optional_type.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/has_member_size.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/implementation_help.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/misc_concept.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/msvc_has_iterator_workaround.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/safe_bool.hpp
+ C:/boost/boost_1_65_1/boost/range/detail/sfinae.hpp
+ C:/boost/boost_1_65_1/boost/range/difference_type.hpp
+ C:/boost/boost_1_65_1/boost/range/distance.hpp
+ C:/boost/boost_1_65_1/boost/range/empty.hpp
+ C:/boost/boost_1_65_1/boost/range/end.hpp
+ C:/boost/boost_1_65_1/boost/range/functions.hpp
+ C:/boost/boost_1_65_1/boost/range/has_range_iterator.hpp
+ C:/boost/boost_1_65_1/boost/range/iterator.hpp
+ C:/boost/boost_1_65_1/boost/range/iterator_range_core.hpp
+ C:/boost/boost_1_65_1/boost/range/mutable_iterator.hpp
+ C:/boost/boost_1_65_1/boost/range/range_fwd.hpp
+ C:/boost/boost_1_65_1/boost/range/rbegin.hpp
+ C:/boost/boost_1_65_1/boost/range/rend.hpp
+ C:/boost/boost_1_65_1/boost/range/reverse_iterator.hpp
+ C:/boost/boost_1_65_1/boost/range/size.hpp
+ C:/boost/boost_1_65_1/boost/range/size_type.hpp
+ C:/boost/boost_1_65_1/boost/range/value_type.hpp
  C:/boost/boost_1_65_1/boost/static_assert.hpp
+ C:/boost/boost_1_65_1/boost/swap.hpp
  C:/boost/boost_1_65_1/boost/throw_exception.hpp
+ C:/boost/boost_1_65_1/boost/type.hpp
  C:/boost/boost_1_65_1/boost/type_index.hpp
  C:/boost/boost_1_65_1/boost/type_index/ctti_type_index.hpp
  C:/boost/boost_1_65_1/boost/type_index/detail/compile_time_type_info.hpp
@@ -470,16 +736,25 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/type_traits/aligned_storage.hpp
  C:/boost/boost_1_65_1/boost/type_traits/alignment_of.hpp
  C:/boost/boost_1_65_1/boost/type_traits/conditional.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/conversion_traits.hpp
  C:/boost/boost_1_65_1/boost/type_traits/declval.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/config.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/detail/has_binary_operator.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/is_function_ptr_helper.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/is_function_ptr_tester.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/is_mem_fun_pointer_tester.hpp
  C:/boost/boost_1_65_1/boost/type_traits/detail/yes_no_type.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/function_traits.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_left_shift.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_minus.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_minus_assign.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_nothrow_assign.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_nothrow_constructor.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_nothrow_copy.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_plus.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_plus_assign.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/has_right_shift.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_trivial_assign.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_trivial_constructor.hpp
  C:/boost/boost_1_65_1/boost/type_traits/has_trivial_copy.hpp
@@ -493,6 +768,7 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/type_traits/is_array.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_assignable.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_base_and_derived.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/is_base_of.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_class.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_const.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_constructible.hpp
@@ -502,8 +778,10 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/type_traits/is_destructible.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_empty.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_enum.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/is_float.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_floating_point.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_function.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/is_fundamental.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_integral.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_lvalue_reference.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_member_function_pointer.hpp
@@ -524,15 +802,21 @@ CMakeFiles/cProlog.dir/c_src/main.cpp.obj
  C:/boost/boost_1_65_1/boost/type_traits/is_void.hpp
  C:/boost/boost_1_65_1/boost/type_traits/is_volatile.hpp
  C:/boost/boost_1_65_1/boost/type_traits/make_signed.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/make_unsigned.hpp
  C:/boost/boost_1_65_1/boost/type_traits/remove_all_extents.hpp
  C:/boost/boost_1_65_1/boost/type_traits/remove_const.hpp
  C:/boost/boost_1_65_1/boost/type_traits/remove_cv.hpp
+ C:/boost/boost_1_65_1/boost/type_traits/remove_pointer.hpp
  C:/boost/boost_1_65_1/boost/type_traits/remove_reference.hpp
  C:/boost/boost_1_65_1/boost/type_traits/same_traits.hpp
  C:/boost/boost_1_65_1/boost/type_traits/type_with_alignment.hpp
+ C:/boost/boost_1_65_1/boost/utility.hpp
  C:/boost/boost_1_65_1/boost/utility/addressof.hpp
+ C:/boost/boost_1_65_1/boost/utility/base_from_member.hpp
+ C:/boost/boost_1_65_1/boost/utility/binary.hpp
  C:/boost/boost_1_65_1/boost/utility/declval.hpp
  C:/boost/boost_1_65_1/boost/utility/enable_if.hpp
+ C:/boost/boost_1_65_1/boost/utility/identity_type.hpp
  C:/boost/boost_1_65_1/boost/variant.hpp
  C:/boost/boost_1_65_1/boost/variant/apply_visitor.hpp
  C:/boost/boost_1_65_1/boost/variant/bad_visit.hpp

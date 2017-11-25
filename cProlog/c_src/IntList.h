@@ -8,29 +8,8 @@
 #include "IntStack.h"
 #include <string>
 #include <vector>
-/*
- ===========================================================================
- Name : IntList.h
- Author : Colleen A. Vanderbilt
- CSCE 5430
- Description : IntList C++ version of Java class in iProlog
- ===========================================================================
- */
 
 /*
-===================================================================
-Class IntList
-    Private data members: ?
-    Default Constructor ?
-    Constructor ?
-    Copy constructor ?
-    Accessors provided for all data members
-    Mutators provided for all data members
-    Assignment operator ?
-
-===================================================================
-*/
-
 #include <string>
 
 // Typedefs
@@ -104,6 +83,26 @@ private:
     IntList(int X, IntList *Xs);
 //    IntList(const int X, const IntList &Xs);
 
+};
+
+*/
+
+class IntList {
+public:
+    explicit IntList(int head);
+    IntList(int head, IntList *xs);
+    static bool isEmpty(IntList *xs);
+    static int getHead(IntList *xs);
+    //static IntList = nullptr;
+    static IntList * getTail(IntList *xs);
+    static IntList * cons(int x, IntList *xs);
+    static IntList * app(std::vector<int> xs, IntList *ys );
+    static IntStack * toInts(IntList *Xs);
+    static int len(IntList *xs);
+    std::string toString();
+    int head;
+    IntList *tail;
+    IntList *empty = nullptr;
 };
 
 

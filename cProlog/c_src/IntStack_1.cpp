@@ -15,7 +15,7 @@ IntStack::IntStack(int size) {
 }
 
 void IntStack::init(int size) {
-  stack.reserve(size);
+  stack.resize(size);
   clear();
 }
 
@@ -24,7 +24,7 @@ int IntStack::getTop() {
   return top;
 }
 
-int IntStack::setTop() {
+int IntStack::setTop(int top) {
   return this->top = top;
 }
 
@@ -89,4 +89,18 @@ void IntStack::reverse() {
 std::vector<int> IntStack::toVec() {
     std::vector<int> rVec(stack);
     return rVec;
+}
+
+string IntStack::toString() {
+    string str;
+    stringstream ss;
+    ss << "[ ";
+    for (int i = 0; i < size(); ++i) {
+        if (i != 0) {
+            ss << ", ";
+        }
+        ss << stack[i];
+    }
+    ss << " ]";
+    return ss.str();
 }
