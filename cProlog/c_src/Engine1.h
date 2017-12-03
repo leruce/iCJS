@@ -21,6 +21,7 @@
 #include <boost/lexical_cast.hpp>
 #include <cmath>
 
+typedef boost::make_recursive_variant<string, int, vector<boost::recursive_variant_ > >::type ObjectE;
 using namespace std;
 
 class Engine1 {
@@ -38,10 +39,8 @@ public:
     vector<IntMap> vmaps;
     int size();
     vector<Clause> dload(string s);
-
     int getRef(int x);
     virtual string showTerm(int x);
-    typedef boost::make_recursive_variant<string, int, vector<boost::recursive_variant_ > >::type ObjectE;
     virtual string showTerm(ObjectE O);
     void ppTrail();
     ObjectE exportTerm(int x);

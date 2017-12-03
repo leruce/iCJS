@@ -36,7 +36,7 @@ int Engine1::tagOf(int w) {
 int Engine1::addSym(string sym) {
     std::map<string, int>::iterator it;
     it = syms->find(sym);
-    if (it == map::end()) {
+    if (it == syms->end()) {
         int i = syms->size();
         syms->emplace(sym, i);
         slist->push_back(sym);
@@ -48,11 +48,11 @@ string Engine1::getSym(int w) {
     if (w < 0 || w >= slist->size()) {
         return ("BADSYMREF = " + to_string(w));
     }
-    return slist->[w];
+    return (*slist)[w];
 }
 
 void Engine1::makeHeap(int size) {
-    heap = new vector(size);
+    heap = vector<int>(size);
     clear();
 }
 
@@ -81,7 +81,7 @@ int Engine1::size() {
 //Come back and make sure this works
 void Engine1::expand() {
     int l = heap.size();
-    vector<int> newstack = new vector(l << 1);
+    vector<int> newstack(l << 1);
     newstack.insert(newstack.end(), heap.begin(), heap.end());
     heap = newstack;
 }
@@ -166,7 +166,7 @@ vector<Clause> Engine1::dload(string s) {
                         map<string, IntStack>::iterator it;
                         it = refs.find(L);
                         IntStack Is;
-                        if (it == map::end()) {
+                        if (it == refs.end()) {
                             refs[L] = Is;
                         } else {
                             Is = it->second;
@@ -180,7 +180,7 @@ vector<Clause> Engine1::dload(string s) {
                         map<string, IntStack>::iterator it;
                         it = refs.find(L);
                         IntStack Is;
-                        if (it == map::end()) {
+                        if (it == refs.end()) {
                             refs[L] = Is;
                         } else {
                             Is = it->second;
@@ -337,7 +337,7 @@ void Engine1::ppTrail() {
     }
 }
 
-static vector<int> Engine1::getSpine(vector<int> cs) {
+vector<int> Engine1::getSpine(vector<int> cs) {
     int a = cs[1];
     int w = detag(a);
     vector<int> rs;
@@ -347,7 +347,7 @@ static vector<int> Engine1::getSpine(vector<int> cs) {
         int t = tagOf(x);
         if (R != t) {
             Main::pp("*** getSpine: unexpected tag=" + to_string(t));
-            return NULL;
+            return {}; //FIX NULLS
         }
         rs[i] = detag(x);
     }
@@ -674,7 +674,7 @@ void Engine1::run() {
     long ctr = 0L;
     for (; ; ctr++) {
         ObjectE A = ask();
-        if (NULL == A) { //NEED TO FIGURE THIS PART OUT. 
+        if (true) { //NEED TO FIGURE THIS PART OUT.
             break;
         }
         if (ctr < 5) {
