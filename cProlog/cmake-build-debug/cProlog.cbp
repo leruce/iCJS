@@ -90,6 +90,12 @@
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Clause.h">
 			<Option target="cProlog"/>
 		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Engine1.cpp">
+			<Option target="cProlog"/>
+		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Engine1.h">
+			<Option target="cProlog"/>
+		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IMap.cpp">
 			<Option target="cProlog"/>
 		</Unit>
@@ -114,13 +120,28 @@
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack_1.cpp">
 			<Option target="cProlog"/>
 		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.cpp">
+			<Option target="cProlog"/>
+		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.h">
+			<Option target="cProlog"/>
+		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.cpp">
 			<Option target="cProlog"/>
 		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.h">
 			<Option target="cProlog"/>
 		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.cpp">
+			<Option target="cProlog"/>
+		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.h">
+			<Option target="cProlog"/>
+		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp">
+			<Option target="cProlog"/>
+		</Unit>
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.h">
 			<Option target="cProlog"/>
 		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/CMakeLists.txt">

@@ -5,11 +5,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Clause.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Clause.cpp.obj"
+  "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Engine1.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IMap.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntList.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntMap1.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/IntMap1.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack_1.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj"
+  "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj"
+  "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

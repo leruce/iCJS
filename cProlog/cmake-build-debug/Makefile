@@ -149,6 +149,33 @@ c_src/Clause.cpp.s:
 	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Clause.cpp.s
 .PHONY : c_src/Clause.cpp.s
 
+c_src/Engine1.obj: c_src/Engine1.cpp.obj
+
+.PHONY : c_src/Engine1.obj
+
+# target to build an object file
+c_src/Engine1.cpp.obj:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj
+.PHONY : c_src/Engine1.cpp.obj
+
+c_src/Engine1.i: c_src/Engine1.cpp.i
+
+.PHONY : c_src/Engine1.i
+
+# target to preprocess a source file
+c_src/Engine1.cpp.i:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Engine1.cpp.i
+.PHONY : c_src/Engine1.cpp.i
+
+c_src/Engine1.s: c_src/Engine1.cpp.s
+
+.PHONY : c_src/Engine1.s
+
+# target to generate assembly for a file
+c_src/Engine1.cpp.s:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Engine1.cpp.s
+.PHONY : c_src/Engine1.cpp.s
+
 c_src/IMap.obj: c_src/IMap.cpp.obj
 
 .PHONY : c_src/IMap.obj
@@ -257,6 +284,33 @@ c_src/IntStack_1.cpp.s:
 	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.s
 .PHONY : c_src/IntStack_1.cpp.s
 
+c_src/Prog.obj: c_src/Prog.cpp.obj
+
+.PHONY : c_src/Prog.obj
+
+# target to build an object file
+c_src/Prog.cpp.obj:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj
+.PHONY : c_src/Prog.cpp.obj
+
+c_src/Prog.i: c_src/Prog.cpp.i
+
+.PHONY : c_src/Prog.i
+
+# target to preprocess a source file
+c_src/Prog.cpp.i:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Prog.cpp.i
+.PHONY : c_src/Prog.cpp.i
+
+c_src/Prog.s: c_src/Prog.cpp.s
+
+.PHONY : c_src/Prog.s
+
+# target to generate assembly for a file
+c_src/Prog.cpp.s:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Prog.cpp.s
+.PHONY : c_src/Prog.cpp.s
+
 c_src/Spine.obj: c_src/Spine.cpp.obj
 
 .PHONY : c_src/Spine.obj
@@ -283,6 +337,33 @@ c_src/Spine.s: c_src/Spine.cpp.s
 c_src/Spine.cpp.s:
 	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Spine.cpp.s
 .PHONY : c_src/Spine.cpp.s
+
+c_src/Toks.obj: c_src/Toks.cpp.obj
+
+.PHONY : c_src/Toks.obj
+
+# target to build an object file
+c_src/Toks.cpp.obj:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj
+.PHONY : c_src/Toks.cpp.obj
+
+c_src/Toks.i: c_src/Toks.cpp.i
+
+.PHONY : c_src/Toks.i
+
+# target to preprocess a source file
+c_src/Toks.cpp.i:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.i
+.PHONY : c_src/Toks.cpp.i
+
+c_src/Toks.s: c_src/Toks.cpp.s
+
+.PHONY : c_src/Toks.s
+
+# target to generate assembly for a file
+c_src/Toks.cpp.s:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.s
+.PHONY : c_src/Toks.cpp.s
 
 c_src/main.obj: c_src/main.cpp.obj
 
@@ -323,6 +404,9 @@ help:
 	@echo ... c_src/Clause.obj
 	@echo ... c_src/Clause.i
 	@echo ... c_src/Clause.s
+	@echo ... c_src/Engine1.obj
+	@echo ... c_src/Engine1.i
+	@echo ... c_src/Engine1.s
 	@echo ... c_src/IMap.obj
 	@echo ... c_src/IMap.i
 	@echo ... c_src/IMap.s
@@ -335,9 +419,15 @@ help:
 	@echo ... c_src/IntStack_1.obj
 	@echo ... c_src/IntStack_1.i
 	@echo ... c_src/IntStack_1.s
+	@echo ... c_src/Prog.obj
+	@echo ... c_src/Prog.i
+	@echo ... c_src/Prog.s
 	@echo ... c_src/Spine.obj
 	@echo ... c_src/Spine.i
 	@echo ... c_src/Spine.s
+	@echo ... c_src/Toks.obj
+	@echo ... c_src/Toks.i
+	@echo ... c_src/Toks.s
 	@echo ... c_src/main.obj
 	@echo ... c_src/main.i
 	@echo ... c_src/main.s

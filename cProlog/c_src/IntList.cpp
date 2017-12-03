@@ -25,7 +25,13 @@ IntList * IntList::getTail(IntList *xs) {
     return xs->tail;
 }
 IntList * IntList::cons(int x, IntList *xs) {
-    return new IntList(x, xs);
+    if (isEmpty(xs)) {
+        xs = new IntList(x);
+        return xs;
+    }
+    else {
+        return new IntList(x, xs);
+    }
 }
 IntList * IntList::app(std::vector<int> xs, IntList *ys) {
     IntList *zs = ys;

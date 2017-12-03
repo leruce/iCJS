@@ -102,7 +102,7 @@ public:
     std::string toString();
     int head;
     IntList *tail;
-    IntList *empty = nullptr;
+    static constexpr IntList *empty = nullptr;
 };
 
 
