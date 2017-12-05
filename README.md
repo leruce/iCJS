@@ -34,7 +34,7 @@ Clause: Done
 
 Spline: Done
 
-IMap: Need to Finish the show/tostring
+IMap: Done
 
 Toks: Done
 
@@ -51,12 +51,9 @@ Current Task:
 Toks files. So we can work on Engine/Prog.
 
 Work Order:
-Prog -> Figure out IMap output style
+Prog -> main
 
-~250 Lines left to translate
-
-Toks File: Just use a istringstream or boost::Tokenizer. no need for MakeTok/Tok/.../ 
-Check using boost::tok function. 
+~200 Lines left to translate
 
 
 
