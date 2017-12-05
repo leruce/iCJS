@@ -48,12 +48,12 @@ ObStack: Done (Vector provide all the functions ie pop_back/push_back/back)
 
 
 Current Task:
-Toks files. So we can work on Engine/Prog.
+So we can work on Prog.
 
 Work Order:
-Prog -> main
+Prog -> showTerm -> DEBUGGING PROCESS
 
-~200 Lines left to translate
+~150 Lines left to translate
 
 
 
