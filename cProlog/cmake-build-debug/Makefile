@@ -338,32 +338,32 @@ c_src/Spine.cpp.s:
 	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Spine.cpp.s
 .PHONY : c_src/Spine.cpp.s
 
-c_src/Toks.obj: c_src/Toks.cpp.obj
+c_src/Toks1.obj: c_src/Toks1.cpp.obj
 
-.PHONY : c_src/Toks.obj
+.PHONY : c_src/Toks1.obj
 
 # target to build an object file
-c_src/Toks.cpp.obj:
-	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj
-.PHONY : c_src/Toks.cpp.obj
+c_src/Toks1.cpp.obj:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj
+.PHONY : c_src/Toks1.cpp.obj
 
-c_src/Toks.i: c_src/Toks.cpp.i
+c_src/Toks1.i: c_src/Toks1.cpp.i
 
-.PHONY : c_src/Toks.i
+.PHONY : c_src/Toks1.i
 
 # target to preprocess a source file
-c_src/Toks.cpp.i:
-	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.i
-.PHONY : c_src/Toks.cpp.i
+c_src/Toks1.cpp.i:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks1.cpp.i
+.PHONY : c_src/Toks1.cpp.i
 
-c_src/Toks.s: c_src/Toks.cpp.s
+c_src/Toks1.s: c_src/Toks1.cpp.s
 
-.PHONY : c_src/Toks.s
+.PHONY : c_src/Toks1.s
 
 # target to generate assembly for a file
-c_src/Toks.cpp.s:
-	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.s
-.PHONY : c_src/Toks.cpp.s
+c_src/Toks1.cpp.s:
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks1.cpp.s
+.PHONY : c_src/Toks1.cpp.s
 
 c_src/main.obj: c_src/main.cpp.obj
 
@@ -425,9 +425,9 @@ help:
 	@echo ... c_src/Spine.obj
 	@echo ... c_src/Spine.i
 	@echo ... c_src/Spine.s
-	@echo ... c_src/Toks.obj
-	@echo ... c_src/Toks.i
-	@echo ... c_src/Toks.s
+	@echo ... c_src/Toks1.obj
+	@echo ... c_src/Toks1.i
+	@echo ... c_src/Toks1.s
 	@echo ... c_src/main.obj
 	@echo ... c_src/main.i
 	@echo ... c_src/main.s

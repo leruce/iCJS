@@ -256,35 +256,10 @@ CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj.provides: CMakeFiles/cProlog.dir/c_
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj.provides.build: CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj
 
 
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj: CMakeFiles/cProlog.dir/flags.make
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj: ../c_src/Toks.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\Toks.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks.cpp
-
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cProlog.dir/c_src/Toks.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks.cpp > CMakeFiles\cProlog.dir\c_src\Toks.cpp.i
-
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cProlog.dir/c_src/Toks.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks.cpp -o CMakeFiles\cProlog.dir\c_src\Toks.cpp.s
-
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.requires:
-
-.PHONY : CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.requires
-
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.provides: CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.provides.build
-.PHONY : CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.provides
-
-CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.provides.build: CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj
-
-
 CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj: CMakeFiles/cProlog.dir/flags.make
 CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
 CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj: ../c_src/Prog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\Prog.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Prog.cpp
 
 CMakeFiles/cProlog.dir/c_src/Prog.cpp.i: cmake_force
@@ -306,6 +281,31 @@ CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj.provides: CMakeFiles/cProlog.dir/c_src
 CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj.provides.build: CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj
 
 
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: CMakeFiles/cProlog.dir/flags.make
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: CMakeFiles/cProlog.dir/includes_CXX.rsp
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: ../c_src/Toks1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cProlog.dir\c_src\Toks1.cpp.obj -c C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks1.cpp
+
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cProlog.dir/c_src/Toks1.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks1.cpp > CMakeFiles\cProlog.dir\c_src\Toks1.cpp.i
+
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cProlog.dir/c_src/Toks1.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Bidbip\Desktop\iProlog-master\iCJS\cProlog\c_src\Toks1.cpp -o CMakeFiles\cProlog.dir\c_src\Toks1.cpp.s
+
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.requires:
+
+.PHONY : CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.requires
+
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.provides: CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\cProlog.dir\build.make CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.provides.build
+.PHONY : CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.provides
+
+CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.provides.build: CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj
+
+
 # Object files for target cProlog
 cProlog_OBJECTS = \
 "CMakeFiles/cProlog.dir/c_src/IntList.cpp.obj" \
@@ -316,8 +316,8 @@ cProlog_OBJECTS = \
 "CMakeFiles/cProlog.dir/c_src/main.cpp.obj" \
 "CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj" \
 "CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj" \
-"CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj" \
-"CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj"
+"CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj" \
+"CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj"
 
 # External object files for target cProlog
 cProlog_EXTERNAL_OBJECTS =
@@ -330,8 +330,8 @@ cProlog.exe: CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj
 cProlog.exe: CMakeFiles/cProlog.dir/c_src/main.cpp.obj
 cProlog.exe: CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj
 cProlog.exe: CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj
-cProlog.exe: CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj
 cProlog.exe: CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj
+cProlog.exe: CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj
 cProlog.exe: CMakeFiles/cProlog.dir/build.make
 cProlog.exe: CMakeFiles/cProlog.dir/linklibs.rsp
 cProlog.exe: CMakeFiles/cProlog.dir/objects1.rsp
@@ -352,8 +352,8 @@ CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj.requ
 CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/main.cpp.obj.requires
 CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/IMap.cpp.obj.requires
 CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj.requires
-CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj.requires
 CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj.requires
+CMakeFiles/cProlog.dir/requires: CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj.requires
 
 .PHONY : CMakeFiles/cProlog.dir/requires
 

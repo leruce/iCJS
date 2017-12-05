@@ -14,7 +14,7 @@
 #include "IMap.h"
 #include "Spine.h"
 #include "Clause.h"
-#include "Toks.h"
+#include "Toks1.h"
 #include <map>
 #include <sstream>
 #include <boost/variant.hpp>
@@ -41,9 +41,9 @@ public:
     vector<Clause *> dload(string s); //Need to use pointer
     int getRef(int x);
     virtual string showTerm(int x);
-    virtual string showTerm(ObjectE * O);
+    virtual string showTerm(ObjectE O);
     void ppTrail();
-    ObjectE * exportTerm(int x);
+    ObjectE exportTerm(int x);
     static vector<int> getSpine(vector<int> cs);
     string showCell(int w);
     string showCells(int base, int len);
@@ -55,7 +55,7 @@ public:
     Clause * getQuery();
     Spine * init();
     Spine * yield();
-    ObjectE * ask();
+    ObjectE ask();
     void run();
     static vector<IntMap> vcreate(int l);
     static void put(vector<IMap> imaps, vector<IntMap> vss, vector<int> keys, int val);

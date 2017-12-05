@@ -132,10 +132,10 @@
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.h">
 			<Option target="cProlog"/>
 		</Unit>
-		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.cpp">
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks1.cpp">
 			<Option target="cProlog"/>
 		</Unit>
-		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.h">
+		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks1.h">
 			<Option target="cProlog"/>
 		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp">

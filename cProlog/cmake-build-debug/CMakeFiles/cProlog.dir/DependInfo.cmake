@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack_1.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/IntStack_1.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Prog.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Spine.cpp.obj"
-  "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Toks.cpp.obj"
+  "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks1.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj"
   "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp" "C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/cmake-build-debug/CMakeFiles/cProlog.dir/c_src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

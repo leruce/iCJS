@@ -135,7 +135,7 @@ vector<vector<string>> Engine1::mapExpand(vector<vector<string>> Wss) {
 
 vector<Clause *> Engine1::dload(string s) {
     bool fromFile = true;
-    vector<vector<vector<string>>> Wsss = iProlog::Toks::toSentences(s, fromFile);
+    vector<vector<vector<string>>> Wsss = Toks1::toSentence(s, fromFile);
     vector<Clause *> Cs;
     for (auto Wss : Wsss) {
         map<string, IntStack> refs;
@@ -191,7 +191,8 @@ vector<Clause *> Engine1::dload(string s) {
                         }
                         break;
                     default:
-                    Main::pp("FORGOTTEN=" + w);
+                    //Main::pp("FORGOTTEN=" + w);
+                        break;
                 }
             }
         }
@@ -290,10 +291,10 @@ string Engine1::showTerm(int x) {
     return showTerm(exportTerm(x));
 }
 
-string Engine1::showTerm(ObjectE * O) {
+string Engine1::showTerm(ObjectE O) {
     //do the static-vistor thing here.
 }
-ObjectE * Engine1::exportTerm(int x) {
+ObjectE Engine1::exportTerm(int x) {
     x = deref(x);
     int t = tagOf(x);
     int w = detag(x);
@@ -314,10 +315,10 @@ ObjectE * Engine1::exportTerm(int x) {
             int a = heap[w];
             if (A != tagOf(a)) {
                 res = "*** should be A, found=" + showCell(a);
-                return &res;
+                return res;
             }
             int n = detag(a);
-            vector< ObjectE * > arr(n);
+            vector< ObjectE > arr(n);
             int k = w + 1;
             for (int i = 0; i < n; i++) {
                 int j = k + i;
@@ -329,15 +330,13 @@ ObjectE * Engine1::exportTerm(int x) {
         default:
             res = "*BAD TERM*" + showCell(x);
     }
-    ObjectE *Tres = new ObjectE;
-    Tres = &res;
-    return Tres;
+    return res;
 }
 
 void Engine1::ppTrail() {
     for (int i = 0; i <= trail->getTop(); i++) {
         int t = trail->get(i);
-        Main::pp("trail[" + to_string(i) + "]=" + showCell(t) + ":" + showTerm(t)); //May need to rewrite into one string.
+        //Main::pp("trail[" + to_string(i) + "]=" + showCell(t) + ":" + showTerm(t)); //May need to rewrite into one string.
     }
 }
 
@@ -350,7 +349,7 @@ vector<int> Engine1::getSpine(vector<int> cs) {
         int x = cs[3+i];
         int t = tagOf(x);
         if (R != t) {
-            Main::pp("*** getSpine: unexpected tag=" + to_string(t));
+            //Main::pp("*** getSpine: unexpected tag=" + to_string(t));
             return {}; //FIX NULLS
         }
         rs[i] = detag(x);
@@ -529,7 +528,7 @@ void Engine1::makeIndexArgs(Spine G, int goal) {
         return;
     }
     int p = 1 + detag(goal);
-    int n = min(MAXIND, detag(getRef(goal)));
+    int n = min(3, detag(getRef(goal)));
     vector<int> xs(MAXIND);
     for (int i = 0; i < n; i++) {
         int cell = deref(heap[p + i]);
@@ -675,13 +674,14 @@ Spine * Engine1::yield() {
     return nullptr;
 }
 
-ObjectE * Engine1::ask() {
+ObjectE Engine1::ask() {
     query = yield();
     if (nullptr == query) {
-        return nullptr;
+        ObjectE i = -999;
+        return i;
     }
     int res = answer(query->ttop)->hd;
-    ObjectE *R = exportTerm(res);
+    ObjectE R = exportTerm(res);
     unwindTrail(query->ttop);
     return R;
 }
@@ -689,18 +689,19 @@ ObjectE * Engine1::ask() {
 void Engine1::run() {
     long ctr = 0L;
     for (; ; ctr++) {
-        ObjectE *A = ask();
-        if (nullptr == A) {
+        ObjectE A = ask();
+        ObjectE i = -999;
+        if ( i == A) {
             break;
         }
         if (ctr < 5) {
-            Prog::println("[" + to_string(ctr) + "] " + "***ANSWER=" + showTerm(A));
+            //Prog::println("[" + to_string(ctr) + "] " + "***ANSWER=" + showTerm(A));
         }
     }
     if (ctr > 5) {
-        Prog::println("...");
+        //Prog::println("...");
     }
-    Prog::println("TOTAL ANSWER=" + to_string(ctr));
+    //Prog::println("TOTAL ANSWER=" + to_string(ctr));
 }
 
 vector<IntMap> Engine1::vcreate(int l) {
@@ -728,9 +729,9 @@ vector<IMap> Engine1::index(vector<Clause *> clauses, vector<IntMap> vmaps) {
         Clause *c = clauses[i];
         put(imaps, vmaps, c->xs, i+1);
     }
-    Main::pp("Index");
-    Main::pp(IMap::show(imaps));
+    //Main::pp("Index");
+    //Main::pp(IMap::show(imaps));
     //Main::pp(vmaps.toString())
-    Main::pp("");
+    //Main::pp("");
     return imaps;
 }
