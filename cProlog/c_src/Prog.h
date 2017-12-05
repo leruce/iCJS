@@ -15,7 +15,10 @@ public:
     static void println(string O);
     string showTerm(ObjectE O);
     static string maybeNull(ObjectE O);
-    static bool isListCons(ObjectE name);
+
+    template<typename T>
+    static bool isListCons(T name);
+
     static bool isOp(ObjectE name);
     static string st0(ObjectE args);
     void ppCode();

@@ -28,45 +28,45 @@ class Engine1 {
 public:
     static constexpr int MAXIND = 3;
     static constexpr int START_INDEX = 20;
-    explicit Engine1(string fname); //Rename when remove old code
-    vector<Clause> clauses;
-    vector<int> cls;
-    map<string, int> *syms;
-    vector<string> *slist;
-    static constexpr int MINSIZE = 1 << 15;
-    Spine *query;
-    vector<IMap> imaps;
-    vector<IntMap> vmaps;
+    explicit Engine1(string fname);
+    vector<Clause *> clauses; //Bugged need to use pointer
+    vector<int> cls; //Int should be safe using non pointer
+    map<string, int> *syms; //Need to check
+    vector<string> *slist; //Need to check if using pointer needed
+    static constexpr int MINSIZE = 1 << 15; //safe
+    Spine *query; //safe
+    vector<IMap> imaps; //Check if pointer to object
+    vector<IntMap> vmaps; //Check if use pointer to object
     int size();
-    vector<Clause> dload(string s);
+    vector<Clause *> dload(string s); //Need to use pointer
     int getRef(int x);
     virtual string showTerm(int x);
-    virtual string showTerm(ObjectE O);
+    virtual string showTerm(ObjectE * O);
     void ppTrail();
-    ObjectE exportTerm(int x);
+    ObjectE * exportTerm(int x);
     static vector<int> getSpine(vector<int> cs);
     string showCell(int w);
     string showCells(int base, int len);
     string showCells(vector<int> cs);
-    virtual void ppc(Spine C);
-    virtual void ppGoal(IntList gs);
-    virtual void ppSpine();
-    Clause putClause(vector<int> cs, vector<int> gs, int neck);
-    Clause getQuery();
+    //virtual void ppc(Spine C);
+    //virtual void ppGoal(IntList gs);
+    //virtual void ppSpine();
+    Clause * putClause(vector<int> cs, vector<int> gs, int neck);
+    Clause * getQuery();
     Spine * init();
     Spine * yield();
-    ObjectE ask();
+    ObjectE * ask();
     void run();
     static vector<IntMap> vcreate(int l);
     static void put(vector<IMap> imaps, vector<IntMap> vss, vector<int> keys, int val);
-    vector<IMap> index(vector<Clause> clauses, vector<IntMap> vmaps);
+    vector<IMap> index(vector<Clause *> clauses, vector<IntMap> vmaps);
 
 private:
-    vector<int> heap;
-    int top;
-    IntStack *trail;
-    IntStack *ustack;
-    vector<Spine> spines;
+    vector<int> heap; //do not use pointer
+    int top; //Do not need pointer
+    IntStack *trail; //Pointer
+    IntStack *ustack; //Pointer
+    vector<Spine> spines; //Maybe need a pointer check
     static constexpr int V = 0;
     static constexpr int U = 1;
     static constexpr int R = 2;
@@ -88,9 +88,9 @@ private:
     void push(int i);
     void expand();
     void ensureSize(int more);
-    static vector<vector<string>> emaybeExpand(vector<string> Ws);
-    static vector<vector<string>> mapExpand(vector<vector<string>> Wss);
-    static vector<int> toNums(vector<Clause> clauses);
+    static vector<vector<string>> emaybeExpand(vector<string> Ws); //May need to check if using pointer
+    static vector<vector<string>> mapExpand(vector<vector<string>> Wss); //May need to check if using pointer
+    static vector<int> toNums(vector<Clause *> clauses);
     int encode(int t, string s);
     static bool isVAR(int x);
     void setRef(int w, int r);
@@ -101,12 +101,12 @@ private:
     static int relocate(int b, int cell);
     void pushCells(int b, int from, int to, int base);
     void pushCells(int b, int from, int to, vector<int> cs);
-    int pushHead(int b, Clause C);
-    vector<int> pushBody(int b, int head, Clause C);
+    int pushHead(int b, Clause * C);
+    vector<int> pushBody(int b, int head, Clause * C);
     void makeIndexArgs(Spine G, int goal);
     vector<int> getIndexables(int ref);
     int cell2index(int cell);
-    bool match(vector<int> xs, Clause C0);
+    bool match(vector<int> xs, Clause * C0);
     Spine * unfold(Spine G);
     Spine * answer(int ttop);
     bool hasClauses(Spine S);

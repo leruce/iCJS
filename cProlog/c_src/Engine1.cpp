@@ -133,10 +133,10 @@ vector<vector<string>> Engine1::mapExpand(vector<vector<string>> Wss) {
     return Rss;
 }
 
-vector<Clause> Engine1::dload(string s) {
+vector<Clause *> Engine1::dload(string s) {
     bool fromFile = true;
     vector<vector<vector<string>>> Wsss = iProlog::Toks::toSentences(s, fromFile);
-    vector<Clause> Cs;
+    vector<Clause *> Cs;
     for (auto Wss : Wsss) {
         map<string, IntStack> refs;
         IntStack *cs = new IntStack;
@@ -149,7 +149,7 @@ vector<Clause> Engine1::dload(string s) {
             gs->push(tag(R, k++));
             cs->push(tag(A, l));
             for (auto w: ws) {
-                if (1 == w.length()) {
+                if (1 == w.size()) {
                     w = "c:" + w;
                 }
                 string L =  w.substr(2);
@@ -195,7 +195,7 @@ vector<Clause> Engine1::dload(string s) {
                 }
             }
         }
-        map<string, IntStack>::iterator K = refs.begin();
+        auto K = refs.begin();
 
         while(K != refs.end()) {
             IntStack Is = K->second;
@@ -221,18 +221,18 @@ vector<Clause> Engine1::dload(string s) {
         int neck = 1 == gs->size() ? cs->size() : detag(gs->get(1));
         vector<int> tgs = gs->toVec();
 
-        Clause C = putClause(cs->toVec(), tgs, neck);
+        Clause * C = putClause(cs->toVec(), tgs, neck);
         Cs.push_back(C);
     }
     int ccount = Cs.size();
-    vector<Clause> cls(ccount);
+    vector<Clause *> cls(ccount);
     for (int i = 0; i < ccount; i++) {
         cls[i] = Cs[i];
     }
     return cls;
 }
 
-vector<int> Engine1::toNums(vector<Clause> clauses) {
+vector<int> Engine1::toNums(vector<Clause *> clauses) {
     int l = clauses.size();
     vector<int> cls(l);
     for (int i = 0; i < l; i++) {
@@ -290,15 +290,16 @@ string Engine1::showTerm(int x) {
     return showTerm(exportTerm(x));
 }
 
-string Engine1::showTerm(ObjectE O) {
+string Engine1::showTerm(ObjectE * O) {
     //do the static-vistor thing here.
 }
-ObjectE Engine1::exportTerm(int x) {
+ObjectE * Engine1::exportTerm(int x) {
     x = deref(x);
     int t = tagOf(x);
     int w = detag(x);
+    //instead of using ObjectE * we use auto
+    //auto res = new ObjectE;
     ObjectE res;
-
     switch(t) {
         case C:
             res = getSym(w);
@@ -312,10 +313,11 @@ ObjectE Engine1::exportTerm(int x) {
         case R:  {
             int a = heap[w];
             if (A != tagOf(a)) {
-                return "*** should be A, found=" + showCell(a); //May need to rewrite it
+                res = "*** should be A, found=" + showCell(a);
+                return &res;
             }
             int n = detag(a);
-            vector< ObjectE > arr(n);
+            vector< ObjectE * > arr(n);
             int k = w + 1;
             for (int i = 0; i < n; i++) {
                 int j = k + i;
@@ -327,7 +329,9 @@ ObjectE Engine1::exportTerm(int x) {
         default:
             res = "*BAD TERM*" + showCell(x);
     }
-    return res;
+    ObjectE *Tres = new ObjectE;
+    Tres = &res;
+    return Tres;
 }
 
 void Engine1::ppTrail() {
@@ -398,7 +402,7 @@ string Engine1::showCells(int base, int len) {
 
 string Engine1::showCells(vector<int> cs) {
     string buf;
-    for (int k = 0; k <cs.size(); k++) {
+    for (int k = 0; k < cs.size(); k++) {
         buf += "[";
         buf += showCell(cs[k]);
         buf += " ";
@@ -472,7 +476,7 @@ bool Engine1::unify_args(int w1, int w2) {
     return true;
 }
 
-Clause Engine1::putClause(vector<int> cs, vector<int> gs, int neck) {
+Clause * Engine1::putClause(vector<int> cs, vector<int> gs, int neck) {
     int base = size();
     int b = tag(V, base);
     int len = cs.size();
@@ -481,7 +485,7 @@ Clause Engine1::putClause(vector<int> cs, vector<int> gs, int neck) {
         gs[i] = relocate(b, gs[i]);
     }
     vector<int> xs = getIndexables(gs[0]);
-    return Clause(len, gs, base, neck, xs);
+    return new Clause(len, gs, base, neck, xs);
 }
 
 int Engine1::relocate(int b, int cell) {
@@ -502,19 +506,19 @@ void Engine1::pushCells(int b, int from, int to, vector<int> cs) {
     }
 }
 
-int Engine1::pushHead(int b, Clause C) {
-    pushCells(b, 0,C.neck, C.base );
-    int head = C.hgs[0];
+int Engine1::pushHead(int b, Clause * C) {
+    pushCells(b, 0,C->neck, C->base );
+    int head = C->hgs[0];
     return relocate(b, head);
 }
 
-vector<int> Engine1::pushBody(int b, int head, Clause C) {
-    pushCells(b, C.neck, C.len, C.base);
-    int l = C.hgs.size();
+vector<int> Engine1::pushBody(int b, int head, Clause * C) {
+    pushCells(b, C->neck, C->len, C->base);
+    int l = C->hgs.size();
     vector<int> gs(l);
     gs[0] = head;
     for (int k = 1; k < l; k++) {
-        int cell = C.hgs[k];
+        int cell = C->hgs[k];
         gs[k] = relocate(b, cell);
     }
     return gs;
@@ -540,6 +544,18 @@ void Engine1::makeIndexArgs(Spine G, int goal) {
     G.cs = cs;
 }
 
+vector<int> Engine1::getIndexables(int ref) {
+    int p = 1 + detag(ref);
+    int n = detag(getRef(ref));
+    vector<int> xs(MAXIND);
+    for (int i = 0; i < MAXIND; i++) {
+        int cell = deref(heap[p + i]);
+        xs[i] = cell2index(cell);
+    }
+    return xs;
+}
+
+
 int Engine1::cell2index(int cell) {
     int x = 0;
     int t = tagOf(cell);
@@ -557,10 +573,10 @@ int Engine1::cell2index(int cell) {
     return x;
 }
 
-bool Engine1::match(vector<int> xs, Clause C0) {
+bool Engine1::match(vector<int> xs, Clause * C0) {
     for (int i = 0; i < MAXIND; i++) {
         int x = xs[i];
-        int y = C0.xs[i];
+        int y = C0->xs[i];
         if (0 == x || 0 == y) {
             continue;
         }
@@ -579,11 +595,11 @@ Spine * Engine1::unfold(Spine G) {
     makeIndexArgs(G, goal);
     int last = G.cs.size();
     for (int k = G.k; k < last; k++) {
-        Clause C0 = clauses[G.cs[k]];
+        Clause * C0 = clauses[G.cs[k]];
         if (!match(G.xs, C0)) {
             continue;
         }
-        int base0 = base - C0.base;
+        int base0 = base - C0->base;
         int b = tag(V, base0);
         int head = pushHead(b, C0);
         ustack->clear();
@@ -607,14 +623,14 @@ Spine * Engine1::unfold(Spine G) {
     return nullptr;
 }
 
-Clause Engine1::getQuery() {
+Clause * Engine1::getQuery() {
     return clauses[clauses.size()-1];
 }
 
 Spine * Engine1::init() {
     int base = size();
-    Clause G = getQuery();
-    Spine *Q = new Spine(G.hgs, base, IntList::empty, trail->getTop(), 0, cls);
+    Clause *G = getQuery();
+    Spine *Q = new Spine(G->hgs, base, IntList::empty, trail->getTop(), 0, cls);
     spines.push_back(*Q);
     return Q;
 }
@@ -656,16 +672,16 @@ Spine * Engine1::yield() {
         }
         return C;
     }
-    return nullptr; //NEED TO RESOLVE THIS
+    return nullptr;
 }
 
-ObjectE Engine1::ask() {
+ObjectE * Engine1::ask() {
     query = yield();
     if (nullptr == query) {
-        return NULL;
+        return nullptr;
     }
     int res = answer(query->ttop)->hd;
-    ObjectE R = exportTerm(res);
+    ObjectE *R = exportTerm(res);
     unwindTrail(query->ttop);
     return R;
 }
@@ -673,8 +689,8 @@ ObjectE Engine1::ask() {
 void Engine1::run() {
     long ctr = 0L;
     for (; ; ctr++) {
-        ObjectE A = ask();
-        if (true) { //NEED TO FIGURE THIS PART OUT.
+        ObjectE *A = ask();
+        if (nullptr == A) {
             break;
         }
         if (ctr < 5) {
@@ -703,14 +719,14 @@ void Engine1::put(vector<IMap> imaps, vector<IntMap> vss, vector<int> keys, int 
     }
 }
 
-vector<IMap> Engine1::index(vector<Clause> clauses, vector<IntMap> vmaps) {
+vector<IMap> Engine1::index(vector<Clause *> clauses, vector<IntMap> vmaps) {
     if (clauses.size() < START_INDEX) {
         return {};
     }
     vector<IMap> imaps = IMap::create(vmaps.size());
     for (int i =0; i < clauses.size(); i++) {
-        Clause c = clauses[i];
-        put(imaps, vmaps, c.xs, i+1);
+        Clause *c = clauses[i];
+        put(imaps, vmaps, c->xs, i+1);
     }
     Main::pp("Index");
     Main::pp(IMap::show(imaps));
