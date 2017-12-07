@@ -26,7 +26,7 @@ set(SOURCE_FILES
     c_src/main.cpp
     c_src/IMap.cpp
     c_src/IMap.h c_src/Engine1.cpp c_src/Engine1.h
-    c_src/Prog.cpp c_src/Prog.h c_src/main.h c_src/Toks1.cpp c_src/Toks1.h)
+    c_src/Prog.cpp c_src/Prog.h c_src/Toks1.cpp c_src/Toks1.h)
 
 add_executable(cProlog ${SOURCE_FILES} c_src/IMap.cpp c_src/IMap.h)
 

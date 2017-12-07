@@ -14,7 +14,6 @@ CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: ../c_src/IntStack.h
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: ../c_src/Prog.h
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: ../c_src/Spine.h
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: ../c_src/Toks1.h
-CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: ../c_src/main.h
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: C:/boost/boost_1_65_1/boost/aligned_storage.hpp
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: C:/boost/boost_1_65_1/boost/array.hpp
 CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj: C:/boost/boost_1_65_1/boost/assert.hpp
@@ -2387,13 +2386,16 @@ CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: C:/boost/boost_1_65_1/boost/utility/
 CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: C:/boost/boost_1_65_1/boost/utility/identity_type.hpp
 CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj: C:/boost/boost_1_65_1/boost/version.hpp
 
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/Clause.h
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/Engine1.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IMap.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntList.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntMap.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/IntStack.h
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/Prog.h
+CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/Spine.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/Toks1.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/main.cpp
-CMakeFiles/cProlog.dir/c_src/main.cpp.obj: ../c_src/main.h
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: C:/boost/boost_1_65_1/boost/aligned_storage.hpp
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: C:/boost/boost_1_65_1/boost/array.hpp
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj: C:/boost/boost_1_65_1/boost/assert.hpp

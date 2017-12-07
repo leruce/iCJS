@@ -10,21 +10,18 @@
 
 class Prog : public Engine1 {
 public:
-    Prog(string fname);
-    static void pp(string O);
-    static void println(string O);
-    string showTerm(ObjectE O);
+    explicit Prog(const string &fname);
+    //void showTerm(int i);
     static string maybeNull(ObjectE O);
-
     template<typename T>
     static bool isListCons(T name);
-
-    static bool isOp(ObjectE name);
+    template <typename T>
+    static bool isOp(T name);
     static string st0(ObjectE args);
     void ppCode();
-    string showClause(Clause s);
+    void showClause(Clause s);
     void ppc(Spine S);
-    void ppGoals(IntList bs);
+    void ppGoals(IntList *bs);
 };
 
 

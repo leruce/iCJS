@@ -9,7 +9,7 @@ using namespace std;
 static int FREE_KEY = 0;
 static int NO_VALUE = 0;
 static int INT_PHI = 0x9E3779B9;
-typedef vector<int> intVector;
+
 
 IntMap::IntMap() {
     i_size = 4;
@@ -43,7 +43,6 @@ void IntMap::init() {
 
     //m_data = new int[capacity*2];
     m_data.resize(capacity*2);
-    //std::fill(m_data.begin(), m_data.end(), 0);
     m_threshold = (int) (capacity * m_fillFactor);
 }
 
@@ -79,11 +78,7 @@ bool IntMap::contains(int key) {
 }
 
 bool IntMap::add(int key) {
-    //Test Case
-    //Once done refactor;
-    //cout <<"Fails Here" << endl;
     int x = put(key, 666);
-    //cout << "put returns " << x << endl;
     return NO_VALUE != x;
 }
 
@@ -99,7 +94,6 @@ void IntMap::intersect0(IntMap &m, vector<IntMap> &maps, vector<IntMap> &vmaps, 
     vector<int> data = m.m_data;
     for (int k = 0; k < data.size(); k += 2) {
         bool found = true;
-//            int key - data[k];
         int key = data[k];
 
         if (FREE_KEY == key) {
@@ -132,7 +126,6 @@ IntStack IntMap::intersect(vector<IntMap> &maps, vector<IntMap> &vmaps) {
 }
 
 int IntMap::put(int key, int value) {
-    //cout << "Key is " << key << endl;
     if (key == FREE_KEY) {
         int ret = m_freeValue;
         if (!m_hasFreeKey) {
@@ -144,11 +137,7 @@ int IntMap::put(int key, int value) {
     }
 
     int ptr = (phiMix(key) & m_mask) << 1;
-    //cout << "Crash here for some reason" << endl;
     int k = m_data[ptr];
-    //cout << "Crash here for some reason after trying to find k" << endl;
-    //cout << "ptr is " << ptr << endl;
-    //cout << "k is " << m_data[ptr] << endl;
     if (k == FREE_KEY) {
         m_data[ptr] = key;
         m_data[ptr+1] = value;
@@ -171,25 +160,17 @@ int IntMap::put(int key, int value) {
         k = m_data[ptr];
 
         if (k == FREE_KEY) {
-            //cout << "k == free" << endl;
-            //cout << "ptr is " << ptr << endl;
-            //cout << "k is " << k << endl;
             m_data[ptr] = key;
             m_data[ptr +1] = value;
-            //cout << m_data[ptr] << endl;
             if (m_size >= m_threshold) {
                 rehash(m_data.size()*2);
             }
             else {
-                //cout << "size is " << m_size << endl;
                 ++m_size;
             }
             return NO_VALUE;
         }
         else if (k == key) {
-            //cout << "k == key" << endl;
-            //cout << "ptr is " << ptr << endl;
-            //cout << "k is " << k << endl;
             int ret = m_data[ptr +1];
             m_data[ptr + 1] = value;
             return ret;
@@ -208,8 +189,6 @@ int IntMap::remove(int key) {
     }
     int ptr = (phiMix(key) & m_mask) << 1;
     int k = m_data[ptr];
-    //cout << "ptr is " << ptr << endl;
-    //cout << "k is " <<  k << endl;
     if (k == key) {
         int res = m_data[ptr + 1];
         shiftKeys(ptr);
@@ -239,18 +218,12 @@ int IntMap::size() {
 int IntMap::shiftKeys(int pos) {
     int last, slot;
     int k;
-    //vector<int> data;
-    //int capacity = arraySize(i_size, m_fillFactor);
-    //data.reserve(capacity * 2);
-    //data = m_data;
     while (true) {
         last = pos;
         pos = pos + 2 & m_mask2;
-        //cout << "pos is " << pos << endl;
         while (true) {
             k = m_data[pos];
             if (k  == FREE_KEY) {
-               // cout << "enter the first cond in 2nd loop" << endl;
                 m_data[last] = FREE_KEY;
                 return last;
             }
@@ -330,3 +303,51 @@ string IntMap::toString() {
     ss << "}";
     return ss.str();
 }
+
+/*
+ *     IntMap Test0;
+    IntMap Test1(10);
+    IntMap Test2(4, .5f);
+    Test2.put(10, 1);
+    Test2.put(21, 2);
+    Test2.put(31, 6);
+    if (Test2.isEmpty()) {
+        cout << "Empty" << endl;
+    }
+    cout << "size: ";
+    cout << Test2.size() << endl;
+    cout << Test2.toString() << endl;
+    cout << Test2.get(21) << endl;
+    Test2.put(21, 7);
+    cout << Test2.get(21) << endl;
+    if (Test2.contains(24)) {
+        cout << "HAVE 24" << endl;
+    }
+    if (Test2.contains(10)) {
+        cout << "HAVE 10" << endl;
+    }
+    if (Test2.add(22)) {
+        cout << "added 22" << endl;
+    }
+    if (Test2.add(21)) {
+        cout << "Added over 21" << endl;
+    }
+    cout << Test2.toString() << endl;
+    cout << Test2.get(22) << endl;
+    cout << Test2.get(21) << endl;
+    cout << Test2.mDelete(22) << endl;
+    cout << Test2.mDelete(43) << endl;
+    Test1.put(10, 1);
+    Test1.put(3, 54);
+    Test1.put(22, 10);
+    Test1.put(31, 2);
+    vector<IntMap> i;
+    i.push_back(Test1);
+    vector<IntMap> j;
+    j.push_back(Test2);
+    IntStack list = Test2.intersect(i, j);
+    cout << list.toString() << endl;
+ *
+ *
+ *
+ */

@@ -141,9 +141,6 @@
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp">
 			<Option target="cProlog"/>
 		</Unit>
-		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.h">
-			<Option target="cProlog"/>
-		</Unit>
 		<Unit filename="C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

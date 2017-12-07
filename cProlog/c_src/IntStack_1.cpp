@@ -87,7 +87,9 @@ void IntStack::reverse() {
   }
 }
 std::vector<int> IntStack::toVec() {
-    std::vector<int> rVec(stack);
+    auto it = stack.begin();
+    auto eit = it + size();
+    std::vector<int> rVec(it, eit);
     return rVec;
 }
 
@@ -104,3 +106,25 @@ string IntStack::toString() {
     ss << " ]";
     return ss.str();
 }
+
+/*
+ *     auto m = new IntStack(4);
+    if (m->isEmpty()) {
+        cout << "is empty" << endl;
+    }
+    m->push(4);
+    m->push(3);
+    m->push(2);
+    m->push(1);
+    m->push(0);
+    cout << m->getTop() << endl;
+    cout << m->get(0) << endl;
+    cout << m->get(1) << endl;
+    cout << m->get(2) << endl;
+    cout << m->size() << endl;
+    cout << m->toString() << endl;
+ *
+ *
+ *
+ *
+ */

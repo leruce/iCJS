@@ -33,7 +33,7 @@ IntList * IntList::cons(int x, IntList *xs) {
         return new IntList(x, xs);
     }
 }
-IntList * IntList::app(std::vector<int> xs, IntList *ys) {
+IntList * IntList::app(std::vector<int> &xs, IntList *ys) {
     IntList *zs = ys;
     for (int i = xs.size() - 1; i >= 0; i--) {
         zs = cons(xs[i], zs);

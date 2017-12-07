@@ -96,7 +96,7 @@ public:
     //static IntList = nullptr;
     static IntList * getTail(IntList *xs);
     static IntList * cons(int x, IntList *xs);
-    static IntList * app(std::vector<int> xs, IntList *ys );
+    static IntList * app(std::vector<int> &xs, IntList *ys );
     static IntStack * toInts(IntList *Xs);
     static int len(IntList *xs);
     std::string toString();

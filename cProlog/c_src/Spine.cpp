@@ -7,7 +7,7 @@
 using namespace std;
 
 
-Spine::Spine(vector<int> gs0, int base, IntList *gs, int ttop, int k, vector<int> cs){
+Spine::Spine(vector<int> gs0, int base, IntList *gs, int ttop, int k, vector<int> &cs){
     hd = gs0[0];
     this->base = base;
     this->gs = IntList::getTail(IntList::app(gs0, gs));

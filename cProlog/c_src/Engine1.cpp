@@ -4,13 +4,13 @@
 
 #include "Engine1.h"
 #include "Prog.h"
-#include "main.h"
+
 
 using namespace std;
 
-Engine1::Engine1(string fname) {
-    syms = new map<string, int>;
-    slist = new vector<string>;
+Engine1::Engine1(const string &fname) {
+    //syms = new map<string, int>;
+    //slist = new vector<string>;
     makeHeap();
     trail = new IntStack;
     ustack = new IntStack;
@@ -21,37 +21,38 @@ Engine1::Engine1(string fname) {
     imaps = index(clauses, vmaps);
 }
 
-int Engine1::tag(int t, int w) {
+int Engine1::tag(const int t, const int w) {
     return -((w << 3) + t);
 }
 
-int Engine1::detag(int w) {
+int Engine1::detag(const int w) {
     return (-w >> 3);
 }
 
-int Engine1::tagOf(int w) {
+int Engine1::tagOf(const int w) {
     return (-w & 7);
 }
 
 int Engine1::addSym(string sym) {
-    std::map<string, int>::iterator it;
-    it = syms->find(sym);
-    if (it == syms->end()) {
-        int i = syms->size();
-        syms->emplace(sym, i);
-        slist->push_back(sym);
+    auto it = syms.find(sym);
+    int val = it->second;
+    if (it == syms.end()) {
+        int i = syms.size();
+        val = i;
+        syms.emplace(sym, i);
+        slist.push_back(sym);
     }
-    return it->second;
+    return val;
 }
 
-string Engine1::getSym(int w) {
-    if (w < 0 || w >= slist->size()) {
+string Engine1::getSym(const int w) {
+    if (w < 0 || w >= slist.size()) {
         return ("BADSYMREF = " + to_string(w));
     }
-    return (*slist)[w];
+    return slist[w];
 }
 
-void Engine1::makeHeap(int size) {
+void Engine1::makeHeap(const int size) {
     heap = vector<int>(size);
     clear();
 }
@@ -63,7 +64,7 @@ void Engine1::makeHeap() {
 int Engine1::getTop() {
     return top;
 }
-int Engine1::setTop(int top) {
+int Engine1::setTop(const int top) {
     this->top = top;
 }
 
@@ -71,7 +72,7 @@ void Engine1::clear() {
     top = -1;
 }
 
-void Engine1::push(int i) {
+void Engine1::push(const int i) {
     heap[++top] = i;
 }
 int Engine1::size() {
@@ -86,15 +87,16 @@ void Engine1::expand() {
     heap = newstack;
 }
 
-void Engine1::ensureSize(int more) {
+void Engine1::ensureSize(const int more) {
     if (1 + top + more >= heap.size()) {
         expand();
     }
 }
 
-vector<vector<string>> Engine1::emaybeExpand(vector<string> Ws) {
+vector<vector<string>> Engine1::emaybeExpand(vector<string> &Ws) {
     string w = Ws[0];
-    if (w.length() < 2 || "l:" != w.substr(0,2)) {
+    string sw = w.substr(0,2);
+    if (w.length() < 2 || "l:" != sw) {
         return {};
     }
     int l = Ws.size();
@@ -113,7 +115,7 @@ vector<vector<string>> Engine1::emaybeExpand(vector<string> Ws) {
     return Rss;
 }
 
-vector<vector<string>> Engine1::mapExpand(vector<vector<string>> Wss) {
+vector<vector<string>> Engine1::mapExpand(vector<vector<string>> &Wss) {
     vector<vector<string>> Rss;
     for (auto Ws : Wss) {
         vector<vector<string>> Hss = emaybeExpand(Ws);
@@ -133,12 +135,12 @@ vector<vector<string>> Engine1::mapExpand(vector<vector<string>> Wss) {
     return Rss;
 }
 
-vector<Clause *> Engine1::dload(string s) {
+vector<Clause> Engine1::dload(const string &s) {
     bool fromFile = true;
     vector<vector<vector<string>>> Wsss = Toks1::toSentence(s, fromFile);
-    vector<Clause *> Cs;
+    vector<Clause> Cs;
     for (auto Wss : Wsss) {
-        map<string, IntStack> refs;
+        map<string, IntStack *> refs;
         IntStack *cs = new IntStack;
         IntStack *gs = new IntStack;
 
@@ -163,53 +165,62 @@ vector<Clause *> Engine1::dload(string s) {
                         k++;
                         break;
                     case 'v': {
-                        map<string, IntStack>::iterator it;
-                        it = refs.find(L);
-                        IntStack Is;
+                        auto it = refs.find(L);
+                        auto Is = new IntStack;
                         if (it == refs.end()) {
                             refs[L] = Is;
                         } else {
                             Is = it->second;
                         }
-                        Is.push(k);
+                        Is->push(k);
                         cs->push(tag(BAD, k));
                         k++;
                     }
                         break;
                     case 'h': {
-                        map<string, IntStack>::iterator it;
-                        it = refs.find(L);
-                        IntStack Is;
+                        auto it = refs.find(L);
+                        auto Is = new IntStack;
                         if (it == refs.end()) {
                             refs[L] = Is;
                         } else {
                             Is = it->second;
                         }
-                        Is.push(k-1);
+                        Is->push(k-1);
                         cs->set(k-1, tag(A, l-1));
                         gs->pop();
                         }
                         break;
                     default:
                     //Main::pp("FORGOTTEN=" + w);
-                        break;
+                        cout << "FORGOTTEN =" << w << endl;
                 }
             }
         }
         auto K = refs.begin();
 
         while(K != refs.end()) {
-            IntStack Is = K->second;
+            IntStack *Is = K->second;
             int leader = -1;
-            for (auto j : Is.toVec()) {
+            for (auto j : Is->toVec()) {
                 if (A == tagOf(cs->get(j))) {
                     leader = j;
                     break;
                 }
             }
             if (-1 == leader) {
-                leader = Is.get(0);
-                for (auto i : Is.toVec()) {
+                leader = Is->get(0);
+                for (auto i : Is->toVec()) {
+                    if (i == leader) {
+                        cs->set(i, tag(V,i));
+                    }
+                    else {
+                        cs->set(i, tag(U,leader));
+                    }
+                }
+
+            }
+            else {
+                for (auto i : Is->toVec()) {
                     if (i == leader) {
                         continue;
                     }
@@ -222,18 +233,21 @@ vector<Clause *> Engine1::dload(string s) {
         int neck = 1 == gs->size() ? cs->size() : detag(gs->get(1));
         vector<int> tgs = gs->toVec();
 
-        Clause * C = putClause(cs->toVec(), tgs, neck);
+        Clause C = putClause(cs->toVec(), tgs, neck);
         Cs.push_back(C);
+        delete cs;
+        delete gs;
     }
-    int ccount = Cs.size();
-    vector<Clause *> cls(ccount);
+    /*int ccount = Cs.size();
+    vector<Clause> cls(ccount);
     for (int i = 0; i < ccount; i++) {
         cls[i] = Cs[i];
-    }
-    return cls;
+    } */
+    //return cls;
+    return Cs;
 }
 
-vector<int> Engine1::toNums(vector<Clause *> clauses) {
+vector<int> Engine1::toNums(vector<Clause> &clauses) {
     int l = clauses.size();
     vector<int> cls(l);
     for (int i = 0; i < l; i++) {
@@ -242,8 +256,8 @@ vector<int> Engine1::toNums(vector<Clause *> clauses) {
     return cls;
 }
 
-int Engine1::encode(int t, string s) {
-    int w;
+int Engine1::encode(const int t, string s) {
+    int w = 0;
     try {
         w = boost::lexical_cast<int>(s);
     } catch (boost::bad_lexical_cast const&) {
@@ -257,19 +271,19 @@ int Engine1::encode(int t, string s) {
     return tag(t,w);
 }
 
-bool Engine1::isVAR(int x) {
+bool Engine1::isVAR(const int x) {
     return tagOf(x) < 2;
 }
 
-int Engine1::getRef(int x) {
+int Engine1::getRef(const int x) {
     return heap[detag(x)];
 }
 
-void Engine1::setRef(int w, int r) {
+void Engine1::setRef(const int w, const int r) {
     heap[detag(w)] = r;
 }
 
-void Engine1::unwindTrail(int savedTop) {
+void Engine1::unwindTrail(const int savedTop) {
     while (savedTop < trail->getTop()) {
         int href = trail->pop();
         setRef(href, href);
@@ -287,13 +301,30 @@ int Engine1::deref(int x) {
     return x;
 }
 
-string Engine1::showTerm(int x) {
-    return showTerm(exportTerm(x));
+void Engine1::showTerm(const int x) {
+    showTerm(exportTerm(x));
 }
 
-string Engine1::showTerm(ObjectE O) {
-    //do the static-vistor thing here.
+void Engine1::showTerm(ObjectE O) {
+    struct print_visitor : public boost::static_visitor<void> {
+        void operator()(int i) const {
+            std::cout << i << ",";
+        }
+        void operator()(std::vector<ObjectE> const &v) const {
+            for (std::size_t i = 0; i < v.size() - 1; i++) {
+                boost::apply_visitor(print_visitor(), v[i]);
+            }
+            cout << "(";
+            boost::apply_visitor(print_visitor(), v[v.size() - 1]);
+            cout << ")";
+        }
+        void operator()(std::string const &v) const {
+            cout << v;
+        }
+    };
+    boost::apply_visitor(print_visitor(), O);
 }
+
 ObjectE Engine1::exportTerm(int x) {
     x = deref(x);
     int t = tagOf(x);
@@ -337,19 +368,21 @@ void Engine1::ppTrail() {
     for (int i = 0; i <= trail->getTop(); i++) {
         int t = trail->get(i);
         //Main::pp("trail[" + to_string(i) + "]=" + showCell(t) + ":" + showTerm(t)); //May need to rewrite into one string.
+        cout << "trail[" << to_string(i) << "]=" << showCell(t) << ":";
+        showTerm(t);
     }
 }
 
-vector<int> Engine1::getSpine(vector<int> cs) {
+vector<int> Engine1::getSpine(const vector<int> &cs) {
     int a = cs[1];
     int w = detag(a);
-    vector<int> rs;
-    rs.resize(w - 1);
+    vector<int> rs(w-1);
     for (int i = 0; i < w-1; i++) {
         int x = cs[3+i];
         int t = tagOf(x);
         if (R != t) {
             //Main::pp("*** getSpine: unexpected tag=" + to_string(t));
+            cout << "*** getSpine: unexpected tag=" << to_string(t);
             return {}; //FIX NULLS
         }
         rs[i] = detag(x);
@@ -357,7 +390,7 @@ vector<int> Engine1::getSpine(vector<int> cs) {
     return rs;
 }
 
-string Engine1::showCell(int w) {
+string Engine1::showCell(const int w) {
     int t = tagOf(w);
     int val = detag(w);
     string s;
@@ -386,7 +419,7 @@ string Engine1::showCell(int w) {
     return s;
 }
 
-string Engine1::showCells(int base, int len) {
+string Engine1::showCells(const int base, const int len) {
     string buf;
     for (int k = 0; k <len; k++) {
         int instr = heap[base + k];
@@ -399,7 +432,7 @@ string Engine1::showCells(int base, int len) {
     return buf;
 }
 
-string Engine1::showCells(vector<int> cs) {
+string Engine1::showCells(vector<int> &cs) {
     string buf;
     for (int k = 0; k < cs.size(); k++) {
         buf += "[";
@@ -409,7 +442,7 @@ string Engine1::showCells(vector<int> cs) {
     return buf;
 }
 
-bool Engine1::unify(int base) {
+bool Engine1::unify(const int base) {
     while (!ustack->isEmpty()) {
         int x1 = deref(ustack->pop());
         int x2 = deref(ustack->pop());
@@ -450,7 +483,7 @@ bool Engine1::unify(int base) {
     return true;
 }
 
-bool Engine1::unify_args(int w1, int w2) {
+bool Engine1::unify_args(const int w1, const int w2) {
     int v1 = heap[w1];
     int v2 = heap[w2];
     int n1 = detag(v1);
@@ -475,7 +508,7 @@ bool Engine1::unify_args(int w1, int w2) {
     return true;
 }
 
-Clause * Engine1::putClause(vector<int> cs, vector<int> gs, int neck) {
+Clause Engine1::putClause(vector<int> cs, vector<int> &gs, const int neck) {
     int base = size();
     int b = tag(V, base);
     int len = cs.size();
@@ -484,46 +517,46 @@ Clause * Engine1::putClause(vector<int> cs, vector<int> gs, int neck) {
         gs[i] = relocate(b, gs[i]);
     }
     vector<int> xs = getIndexables(gs[0]);
-    return new Clause(len, gs, base, neck, xs);
+    return Clause(len, gs, base, neck, xs);
 }
 
-int Engine1::relocate(int b, int cell) {
+int Engine1::relocate(const int b, const int cell) {
     return tagOf(cell) < 3 ? cell + b : cell;
 }
 
-void Engine1::pushCells(int b, int from, int to, int base) {
+void Engine1::pushCells(const int b, const int from, const int to, const int base) {
     ensureSize(to - from);
     for (int i = from; i < to; i++) {
         push(relocate(b, heap[base+i]));
     }
 }
 
-void Engine1::pushCells(int b, int from, int to, vector<int> cs) {
+void Engine1::pushCells(const int b, const int from, const int to, vector<int> &cs) {
     ensureSize(to -  from);
     for (int i = from; i < to; i++) {
         push(relocate(b, cs[i]));
     }
 }
 
-int Engine1::pushHead(int b, Clause * C) {
-    pushCells(b, 0,C->neck, C->base );
-    int head = C->hgs[0];
+int Engine1::pushHead(const int b, Clause C) {
+    pushCells(b, 0,C.neck, C.base );
+    int head = C.hgs[0];
     return relocate(b, head);
 }
 
-vector<int> Engine1::pushBody(int b, int head, Clause * C) {
-    pushCells(b, C->neck, C->len, C->base);
-    int l = C->hgs.size();
+vector<int> Engine1::pushBody(const int b, const int head, Clause C) {
+    pushCells(b, C.neck, C.len, C.base);
+    int l = C.hgs.size();
     vector<int> gs(l);
     gs[0] = head;
     for (int k = 1; k < l; k++) {
-        int cell = C->hgs[k];
+        int cell = C.hgs[k];
         gs[k] = relocate(b, cell);
     }
     return gs;
 }
 
-void Engine1::makeIndexArgs(Spine G, int goal) {
+void Engine1::makeIndexArgs(Spine &G, const int goal) {
     if (!G.xs.empty()) {
         return;
     }
@@ -543,11 +576,11 @@ void Engine1::makeIndexArgs(Spine G, int goal) {
     G.cs = cs;
 }
 
-vector<int> Engine1::getIndexables(int ref) {
+vector<int> Engine1::getIndexables(const int ref) {
     int p = 1 + detag(ref);
     int n = detag(getRef(ref));
     vector<int> xs(MAXIND);
-    for (int i = 0; i < MAXIND; i++) {
+    for (int i = 0; i < MAXIND && i < n; i++) {
         int cell = deref(heap[p + i]);
         xs[i] = cell2index(cell);
     }
@@ -555,7 +588,7 @@ vector<int> Engine1::getIndexables(int ref) {
 }
 
 
-int Engine1::cell2index(int cell) {
+int Engine1::cell2index(const int cell) {
     int x = 0;
     int t = tagOf(cell);
     switch(t) {
@@ -572,10 +605,10 @@ int Engine1::cell2index(int cell) {
     return x;
 }
 
-bool Engine1::match(vector<int> xs, Clause * C0) {
+bool Engine1::match(vector<int> &xs, Clause C0) {
     for (int i = 0; i < MAXIND; i++) {
         int x = xs[i];
-        int y = C0->xs[i];
+        int y = C0.xs[i];
         if (0 == x || 0 == y) {
             continue;
         }
@@ -594,11 +627,11 @@ Spine * Engine1::unfold(Spine G) {
     makeIndexArgs(G, goal);
     int last = G.cs.size();
     for (int k = G.k; k < last; k++) {
-        Clause * C0 = clauses[G.cs[k]];
+        Clause C0 = clauses[G.cs[k]];
         if (!match(G.xs, C0)) {
             continue;
         }
-        int base0 = base - C0->base;
+        int base0 = base - C0.base;
         int b = tag(V, base0);
         int head = pushHead(b, C0);
         ustack->clear();
@@ -622,27 +655,27 @@ Spine * Engine1::unfold(Spine G) {
     return nullptr;
 }
 
-Clause * Engine1::getQuery() {
+Clause Engine1::getQuery() {
     return clauses[clauses.size()-1];
 }
 
 Spine * Engine1::init() {
     int base = size();
-    Clause *G = getQuery();
-    Spine *Q = new Spine(G->hgs, base, IntList::empty, trail->getTop(), 0, cls);
+    Clause G = getQuery();
+    Spine *Q = new Spine(G.hgs, base, IntList::empty, trail->getTop(), 0, cls);
     spines.push_back(*Q);
     return Q;
 }
 
-Spine * Engine1::answer(int ttop) {
+Spine * Engine1::answer(const int ttop) {
     return new Spine(spines[0].hd, ttop);
 }
 
-bool Engine1::hasClauses(Spine S) {
+bool Engine1::hasClauses(const Spine S) {
     return S.k < S.cs.size();
 }
 
-bool Engine1::hasGoals(Spine S) {
+bool Engine1::hasGoals(const Spine S) {
     return !IntList::isEmpty(S.gs);
 }
 
@@ -691,24 +724,30 @@ void Engine1::run() {
     for (; ; ctr++) {
         ObjectE A = ask();
         ObjectE i = -999;
-        if ( i == A) {
+        if (i == A) {
             break;
         }
         if (ctr < 5) {
             //Prog::println("[" + to_string(ctr) + "] " + "***ANSWER=" + showTerm(A));
+            cout << "[" << to_string(ctr) << "] " << "***ANSWER=";
+            showTerm(A);
+            cout << endl;
         }
     }
     if (ctr > 5) {
         //Prog::println("...");
+        cout << "..." << endl;
     }
     //Prog::println("TOTAL ANSWER=" + to_string(ctr));
+    cout << "TOTAL ANSWER=" << to_string(ctr) << endl;
 }
 
 vector<IntMap> Engine1::vcreate(int l) {
-
+    vector<IntMap> vcre(l);
+    return vcre;
 }
 
-void Engine1::put(vector<IMap> imaps, vector<IntMap> vss, vector<int> keys, int val) {
+void Engine1::put(vector<IMap> &imaps, vector<IntMap> &vss, vector<int> &keys, const int val) {
     for (int i = 0; i < imaps.size(); i++) {
         int key = keys[i];
         if (key != 0) {
@@ -720,18 +759,35 @@ void Engine1::put(vector<IMap> imaps, vector<IntMap> vss, vector<int> keys, int 
     }
 }
 
-vector<IMap> Engine1::index(vector<Clause *> clauses, vector<IntMap> vmaps) {
+vector<IMap> Engine1::index(vector<Clause> &clauses, vector<IntMap> &vmaps) {
     if (clauses.size() < START_INDEX) {
         return {};
     }
     vector<IMap> imaps = IMap::create(vmaps.size());
     for (int i =0; i < clauses.size(); i++) {
-        Clause *c = clauses[i];
-        put(imaps, vmaps, c->xs, i+1);
+        Clause c = clauses[i];
+         put(imaps, vmaps, c.xs, i+1);
     }
     //Main::pp("Index");
+    cout << "Index";
     //Main::pp(IMap::show(imaps));
+    cout << IMap::show(imaps);
     //Main::pp(vmaps.toString())
+    printV(vmaps);
     //Main::pp("");
+    cout << "";
     return imaps;
+}
+void Engine1::printV(vector<IntMap> &s) {
+    string str = "{";
+    for (auto it = s.begin(); it != s.end(); it++) {
+        if (it != s.end()) {
+            str += (*it).toString();
+        }
+        else {
+            str += (*it).toString();
+            str += " , ";
+        }
+    }
+    str += "}";
 }

@@ -30,7 +30,7 @@ string Toks1::getWord(string tok) {
     return t;
 }
 
-vector<vector<vector<string>>> Toks1::toSentence(string &s, bool fromFile) {
+vector<vector<vector<string>>> Toks1::toSentence(const string &s, bool fromFile) {
     vector<vector<vector<string>>> Wsss;
     vector<vector<string>> Wss;
     vector<string> Ws;
@@ -38,14 +38,14 @@ vector<vector<vector<string>>> Toks1::toSentence(string &s, bool fromFile) {
     const string AND = "and";
     const string DOT = ".";
     const string HOLDS = "holds";
-    const string LISTS = "list";
+    const string LISTS = "lists";
     const string IS = "is";
 
     char CharSep[] = "!\"#$%&'()*+,-/:;<=>?@[\\]^`{|}~ ";
     if (fromFile) {
         ifstream inFile(s, ios::in);
         if (inFile.is_open()) {
-            cout << "Open" << endl;
+
         }
         string getLine;
         while(getline(inFile, getLine)) {
@@ -98,7 +98,7 @@ vector<vector<vector<string>>> Toks1::toSentence(string &s, bool fromFile) {
             if (t == ("c:" + DOT)) {
                 Wss.push_back(Ws);
                 Wsss.push_back(Wss);
-                Wss.clear();
+                Wss.clear(); //Why create a new vector when you can clear.
                 Ws.clear();
             }
             else if (t == ("c:" + IF)) {
@@ -129,7 +129,7 @@ vector<vector<vector<string>>> Toks1::toSentence(string &s, bool fromFile) {
     return Wsss;
 }
 
-void Toks1::PrintTok(vector<vector<vector<string>>> Wsss) {
+void Toks1::PrintTok(vector<vector<vector<string>>> &Wsss) {
     cout << "{";
     for (auto Wss : Wsss) {
         cout << "{";

@@ -19,8 +19,8 @@ using namespace std;
 class Toks1 {
 public:
     static string getWord(string std);
-    static vector<vector<vector<string>>> toSentence(string &s, bool fromFile);
-    static void PrintTok(vector<vector<vector<string>>> s);
+    static vector<vector<vector<string>>> toSentence(const string &s, bool fromFile);
+    static void PrintTok(vector<vector<vector<string>>> &s);
 };
 
 

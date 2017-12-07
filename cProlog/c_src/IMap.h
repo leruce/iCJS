@@ -24,6 +24,7 @@ public:
     bool remove(int key);
     int size();
     //Dont need keySet/keyIterator.
+    string toString();
     static vector<IMap> create(int l);
     static bool put(vector<IMap> &imaps, int pos, int key, int val );
     static vector<int> get(vector<IMap> &imaps, vector<IntMap> &vmaps, vector<int> &keys);

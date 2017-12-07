@@ -15,7 +15,6 @@ CMakeFiles/cProlog.dir/c_src/Engine1.cpp.obj
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks1.h
- C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.h
  C:/boost/boost_1_65_1/boost/aligned_storage.hpp
  C:/boost/boost_1_65_1/boost/array.hpp
  C:/boost/boost_1_65_1/boost/assert.hpp
@@ -2388,13 +2387,16 @@ CMakeFiles/cProlog.dir/c_src/Toks1.cpp.obj
  C:/boost/boost_1_65_1/boost/utility/identity_type.hpp
  C:/boost/boost_1_65_1/boost/version.hpp
 CMakeFiles/cProlog.dir/c_src/main.cpp.obj
+ C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Clause.h
+ C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Engine1.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IMap.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntList.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntMap.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IntStack.h
+ C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Prog.h
+ C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Spine.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/Toks1.h
  C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.cpp
- C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/main.h
  C:/boost/boost_1_65_1/boost/aligned_storage.hpp
  C:/boost/boost_1_65_1/boost/array.hpp
  C:/boost/boost_1_65_1/boost/assert.hpp
