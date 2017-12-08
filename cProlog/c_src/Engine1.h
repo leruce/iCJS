@@ -20,8 +20,10 @@
 #include <boost/variant.hpp>
 #include <boost/lexical_cast.hpp>
 #include <cmath>
+#include <iomanip>
 
 typedef boost::make_recursive_variant<string, int, vector<boost::recursive_variant_ > >::type ObjectE;
+typedef std::vector<ObjectE> ObjectV; //This is vector Object.
 using namespace std;
 
 class Engine1 {

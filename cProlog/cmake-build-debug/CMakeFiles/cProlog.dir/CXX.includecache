@@ -53,6 +53,8 @@ boost/lexical_cast.hpp
 -
 cmath
 -
+iomanip
+-
 
 C:/Users/Bidbip/Desktop/iProlog-master/iCJS/cProlog/c_src/IMap.cpp
 IMap.h

@@ -305,24 +305,67 @@ void Engine1::showTerm(const int x) {
     showTerm(exportTerm(x));
 }
 
-void Engine1::showTerm(ObjectE O) {
-    struct print_visitor : public boost::static_visitor<void> {
-        void operator()(int i) const {
-            std::cout << i << ",";
-        }
-        void operator()(std::vector<ObjectE> const &v) const {
-            for (std::size_t i = 0; i < v.size() - 1; i++) {
-                boost::apply_visitor(print_visitor(), v[i]);
+struct create_Str {
+    using result_type = void;
+    std::ostream & out;
+    template <typename T> void call(T const &v) const { return operator()(v);}
+
+    template <typename... Ts> void operator()(boost::variant<Ts...> const &v) const {
+        return boost::apply_visitor(*this, v);
+    }
+
+    void operator()(int i) const {
+        out << i;
+    }
+    void operator()(std::string const &s) const {
+        out << s ;
+    }
+    template <typename... Ts> void operator()(std::vector<Ts...> const &v) const {
+        out << "(";
+        bool first = true;
+        for (auto &i : v) {
+            if (first) {
+                first = false;
             }
-            cout << "(";
-            boost::apply_visitor(print_visitor(), v[v.size() - 1]);
-            cout << ")";
+            else {
+                out << ",";
+            }
+            call(i);
         }
-        void operator()(std::string const &v) const {
-            cout << v;
+        out << ")";
+    }
+};
+
+void Engine1::showTerm(ObjectE O) {
+    //This is dervided from sehe help. Rather enlighting way
+    /*
+    struct create_string : boost::static_visitor<std::string const&> {
+        std::string const& operator()(const int i) {
+            return storedString += std::to_string(i) + ",";
         }
+        std::string const& operator()(ObjectV const &v) {
+
+            for (std::size_t i = 0; i < v.size() - 1; i++) {
+                create_string nest;
+                storedString += boost::apply_visitor(nest, v[i]);
+            }
+            storedString += "(";
+            create_string nest;
+            storedString += boost::apply_visitor(nest, v[v.size() - 1]);
+            return storedString += ")";
+        }
+        std::string const& operator()(std::string const &s) {
+            return storedString += s + ",";
+        }
+
+        std::string storedString = "";
     };
-    boost::apply_visitor(print_visitor(), O);
+    */
+    create_Str str{std::cout};
+    str(O);
+
+    //create_string vis;
+    //cout << boost::apply_visitor(vis, O);
 }
 
 ObjectE Engine1::exportTerm(int x) {

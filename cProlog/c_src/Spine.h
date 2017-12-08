@@ -13,6 +13,8 @@ using namespace std;
 class Spine {
 public:
     Spine(vector<int> gs0, int base, IntList *gs, int ttop, int k, vector<int> &cs);
+    ~Spine();
+    Spine(const Spine &copied);
     Spine(int hd, int ttop);
     int hd;
     int base;

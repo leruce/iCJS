@@ -3,96 +3,56 @@
 #include "IntStack.h"
 #include "IntMap.h"
 #include "IMap.h"
+#include <sstream>
+#include <fstream>
+#include "Toks1.h"
+#include "Engine1.h"
+#include "Prog.h"
+#include <chrono>
+#include <vector>
 #include <boost/variant.hpp>
+#include <boost/lexical_cast.hpp>
 
 using namespace std;
 
 
-boost::variant<int, vector<int>> checkfunc(int x) {
-    boost::variant<int, vector<int>> a;
-    if (x == 0) {
-        a = 3.0;
+
+void run(string fname0) {
+    bool p = true;
+    string fname = fname0 + ".nl";
+    Engine1 *P;
+    if (p) {
+        P = new Prog(fname);
+        cout << "CODE" << endl;
+        ((Prog *) P)->ppCode();
     }
     else {
-        a = vector<int>();
+        P = new Engine1(fname);
     }
-    return a;
-};
+    cout << "RUNNING" << endl;
+    //Get time
+    auto start = chrono::high_resolution_clock::now();
+    P->run();
+    auto finish = chrono::high_resolution_clock::now();
+    //Get time
+    cout << "time=" << chrono::duration_cast<std::chrono::nanoseconds>(finish-start).count() / 1000000000.0<< endl;
 
-int main() {
-    boost::variant<int, vector<int>> a = checkfunc(2);
-    //http://www.bnikolic.co.uk/boostqf/variant.html
-    cout << a << endl;
+}
 
-    //vector<IMap> x = IMap::create(4);
-    //IMap::put(x, 0, 1, 100);
-    //IMap::put(x, 1, 2, 200);
-    //IMap::put(x, 2, 3, 400);
-    /*
-    //This will be IntStack Test
-    IntStack *n = new IntStack();
-
-    if (n->isEmpty()) {
-        cout << "Is Empty" << endl;
+int main(int argc, char *argv[]) {
+    string s;
+    //string fname = argv[1];
+    if (argc != 2) {
+        s = "add.pl";
     }
     else {
-        cout << "not empty" << endl;
+        s = argv[1];
     }
-    cout << n->size();
-
-    n->push(3);
-    cout << "Current Top " << n->getTop() << endl;
-
-    n->push(6);
-    cout << "Current Top " << n->getTop() << endl;
-
-    cout << "Index Value 1: " << n->get(1) << endl;
-    cout << "Index Value 2: " << n->get(2) << endl;
-    n->set(1, 5);
-    cout << "Index Value 1: " << n->get(1) << endl;
-    n->set(2,3);
-    cout << "Index Value 2: " << n->get(2) << endl;
-    cout << "Size is " << n->size() << endl;
-    cout << "popped " << n->pop() << endl << endl;
-
-
-    //Conductors
-    IntMap *m = new IntMap();
-    if (m->add(1)) {
-        cout << "failed" << endl;
-    }
-    else {
-        cout << "added" << endl;
-    }
-
-    cout <<"main size is " << m->size() << endl;
-    if (m->add(2)) {
-        cout << "failed" << endl;
-    }
-    else {
-        cout << "added" << endl;
-    }
-    //cout << "main size is " << m->size() << endl;
-    if (m->isEmpty()) {
-        cout << "Is Empty" << endl;
-    }
-    else {
-        cout << "Is not Empty" << endl;
-    }
-    if (m->contains(2)) {
-        cout << "Contain Works" << endl;
-    }
-    else {
-        cout << "Contain doesnt work" << endl;
-    }
-    if (m->mDelete(1)) {
-        cout << "delete works" << endl;
-    }
-    else {
-        cout << "delete doesnt work" << endl;
-    }
-    cout << "Done with code" << endl;
-    cout << "main size is " << m->size() << endl;
-*/
+     //string s = "big.pl";
+    //cout << "Get to the before run(s)" << endl;
+     run(s);
+    //vector<vector<vector<string>>> Wsss = Toks1::toSentence(s, true);
+    //Toks1::PrintTok(Wsss);
     return 0;
 }
+

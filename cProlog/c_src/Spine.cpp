@@ -24,3 +24,16 @@ Spine::Spine(int hd, int ttop) {
     k= -1;
     cs.empty();
 }
+
+Spine::~Spine() {
+    cs.clear();
+}
+
+Spine::Spine(const Spine &copied) {
+    hd = copied.hd;
+    base = copied.base;
+    gs = copied.gs;
+    ttop = copied.ttop;
+    k = copied.k;
+    cs = copied.cs;
+}
