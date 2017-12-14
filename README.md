@@ -1,7 +1,8 @@
 2017 Project for CSCE 5430
 
 Group Members:
-Garrett Addington
+Garrett Addington Leruce
+
 
 Colleen Vanderbilt //Dropped
 
