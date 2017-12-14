@@ -14,6 +14,7 @@ Clause::Clause(int len, vector<int> &hgs, int base, int neck, vector<int> &xs) {
     this->neck = neck;
     this->xs = xs;
 }
+
 Clause::Clause(const Clause &copier) {
     hgs = copier.hgs;
     base = copier.base;

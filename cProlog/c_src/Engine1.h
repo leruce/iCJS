@@ -110,7 +110,7 @@ private:
     vector<int> getIndexables(int ref);
     int cell2index(int cell);
     bool match(vector<int> &xs, Clause C0);
-    Spine * unfold(Spine G);
+    Spine * unfold(Spine &G);
     Spine * answer(int ttop);
     bool hasClauses(Spine S);
     bool hasGoals(Spine S);

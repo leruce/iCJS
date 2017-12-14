@@ -24,7 +24,8 @@ void run(string fname0) {
     if (p) {
         P = new Prog(fname);
         cout << "CODE" << endl;
-        ((Prog *) P)->ppCode();
+        dynamic_cast<Prog *>(P)->ppCode();
+        //((Prog *) P)->ppCode();
     }
     else {
         P = new Engine1(fname);

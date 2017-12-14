@@ -256,7 +256,7 @@ vector<int> Engine1::toNums(vector<Clause> &clauses) {
     return cls;
 }
 
-int Engine1::encode(const int t, string s) {
+int Engine1::encode(int t, string s) {
     int w = 0;
     try {
         w = boost::lexical_cast<int>(s);
@@ -662,7 +662,7 @@ bool Engine1::match(vector<int> &xs, Clause C0) {
     return true;
 }
 
-Spine * Engine1::unfold(Spine G) {
+Spine * Engine1::unfold(Spine &G) {
     int ttop = trail->getTop();
     int htop = getTop();
     int base = htop + 1;
@@ -731,12 +731,13 @@ void Engine1::popSpine() {
 
 Spine * Engine1::yield() {
     while (!spines.empty()) {
-        Spine G = spines.back();
-        if (!hasClauses(G)) {
+        Spine *G = &spines.back();
+        if (!hasClauses(*G)) {
             popSpine();
             continue;
         }
-        Spine *C = unfold(G);
+        Spine *C = unfold(*G);
+
         if (C == nullptr) {
             popSpine();
             continue;
