@@ -75,3 +75,5 @@ https://github.com/leruce/iCJS/tree/master/cProlog/cmake-build-debug
 
 
 Run cProlog.exe in the commandline with one given arguement such as add.pl or queen.pl as long you have the files in that dir.
+
+You also just upload the project into the CLion and run the code there with it inbuild build/run
