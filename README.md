@@ -57,5 +57,21 @@ Prog -> showTerm -> DEBUGGING PROCESS
 ~150 Lines left to translate
 
 
+TO RUN THE CODE:
 
-For different class for me to remember: Presentation on Nov 30 #5 Database
+Download the this Resp.
+
+Make sure you have Boost installed
+
+Run the CMake file
+
+Make sure you use the iProlog's converter and run it on any files you need to get the .nl file
+
+Proceed to run the code given by the cmake with the arguement such as add.pl or queens.pl
+
+Other option, 
+go to that folder
+https://github.com/leruce/iCJS/tree/master/cProlog/cmake-build-debug
+
+
+Run cProlog.exe in the commandline with one given arguement such as add.pl or queen.pl as long you have the files in that dir.
